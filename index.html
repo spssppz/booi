@@ -74,13 +74,6 @@
 			<div class="content content__title">
 				<h1 class="main__title">Официальный сайт Booi казино</h1>
 			</div>
-			<div class="categories">
-
-				<ul class="categories__list">
-				</ul>
-			</div>
-
-
 			<div class="catalog" id="games">
 				<div class="form">
 					<div class="form__box input">
@@ -100,116 +93,8 @@
 						</button>
 					</div>
 				</div>
-				<ul class="catalog__list">
-					<li class="catalog__item">
-						<div class="catalog__item_wrapper">
-							<img class="catalog__pct" src="img/epicapi.jpg" alt="" class="img_absolute catalog__img">
-							<div class="catalog__hover">
-								<a href="" class="catalog__title">Онлайн слот Epic
-									Ape</a> <a href="" class="catalog__circle"></a>
-							</div>
-						</div>
-					</li>
-					<li class="catalog__item">
-						<div class="catalog__item_wrapper">
-							<img class="catalog__pct" src="img/swetbon.jpg" alt="" class="img_absolute catalog__img">
-							<div class="catalog__hover">
-								<a href="" class="catalog__title">Игровой
-									аппарат Sweet Bonanza</a> <a href="" class="catalog__circle"></a>
-							</div>
-						</div>
-					</li>
-					<li class="catalog__item">
-						<div class="catalog__item_wrapper">
-							<img class="catalog__pct" src="img/zeusopt.jpg" alt="" class="img_absolute catalog__img">
-							<div class="catalog__hover">
-								<a href="" class="catalog__title">Zeus Rush
-									Fever онлайн слот</a> <a href="" class="catalog__circle"></a>
-							</div>
-						</div>
-					</li>
-					<li class="catalog__item">
-						<div class="catalog__item_wrapper">
-							<img class="catalog__pct" src="img/athena.jpg" alt="" class="img_absolute catalog__img">
-							<div class="catalog__hover">
-								<a href="" class="catalog__title">Игровой
-									автомат Athena's Glory</a> <a href="" class="catalog__circle"></a>
-							</div>
-						</div>
-					</li>
-					<li class="catalog__item">
-						<div class="catalog__item_wrapper">
-							<img class="catalog__pct" src="img/bufwild.jpg" alt="" class="img_absolute catalog__img">
-							<div class="catalog__hover">
-								<a href="" class="catalog__title">Игровой
-									слот Big Wild Buffalo</a> <a href="" class="catalog__circle"></a>
-							</div>
-						</div>
-					</li>
-					<li class="catalog__item">
-						<div class="catalog__item_wrapper">
-							<img class="catalog__pct" src="img/jandv.jpg" alt="" class="img_absolute catalog__img">
-							<div class="catalog__hover">
-								<a href="" class="catalog__title">Игровой аппарат Jack And The Beanstalk</a> <a href=""
-									class="catalog__circle"></a>
-							</div>
-						</div>
-					</li>
-					<li class="catalog__item">
-						<div class="catalog__item_wrapper">
-							<img class="catalog__pct" src="img/immrom.jpg" alt="" class="img_absolute catalog__img">
-							<div class="catalog__hover">
-								<a href="" class="catalog__title">Игровой
-									автомат Immortal Romance</a> <a href="" class="catalog__circle"></a>
-							</div>
-						</div>
-					</li>
-					<li class="catalog__item">
-						<div class="catalog__item_wrapper">
-							<img class="catalog__pct" src="img/7RhtjiyDhjHY.jpeg" alt="" class="img_absolute catalog__img">
-							<div class="catalog__hover">
-								<a href="" class="catalog__title">Игровой автомат
-									888 Dragons (888 Драконы)</a> <a href="" class="catalog__circle"></a>
-							</div>
-						</div>
-					</li>
-					<li class="catalog__item">
-						<div class="catalog__item_wrapper">
-							<img class="catalog__pct" src="img/SjqPFGizKKNg.jpeg" alt="" class="img_absolute catalog__img">
-							<div class="catalog__hover">
-								<a href="" class="catalog__title">Игровой автомат
-									Zoom</a> <a href="" class="catalog__circle"></a>
-							</div>
-						</div>
-					</li>
-					<li class="catalog__item">
-						<div class="catalog__item_wrapper">
-							<img class="catalog__pct" src="img/3ljaknUcZJGm.jpeg" alt="" class="img_absolute catalog__img">
-							<div class="catalog__hover">
-								<a href="" class="catalog__title">Admiral Nelson - игровой автомат Amatic</a> <a href=""
-									class="catalog__circle"></a>
-							</div>
-						</div>
-					</li>
-					<li class="catalog__item">
-						<div class="catalog__item_wrapper">
-							<img class="catalog__pct" src="img/2millionbc.jpeg" alt="" class="img_absolute catalog__img">
-							<div class="catalog__hover">
-								<a href="" class="catalog__title">Игровой
-									автомат 2 Million B.C.</a> <a href="" class="catalog__circle"></a>
-							</div>
-						</div>
-					</li>
-					<li class="catalog__item">
-						<div class="catalog__item_wrapper">
-							<img class="catalog__pct" src="img/arcader-1.jpeg" alt="" class="img_absolute catalog__img">
-							<div class="catalog__hover">
-								<a href="" class="catalog__title">Игровой автомат
-									Arcader</a> <a href="" class="catalog__circle"></a>
-							</div>
-						</div>
-					</li>
-				</ul>
+				<ul class="catalog__list"></ul>
+
 				<div class="catalog__all">
 					<div class="catalog__all_bg"></div>
 					<a href="" class="button-line button-line_pure">Посмотреть все</a>
@@ -1049,6 +934,15 @@
 		<script src="js/main.js"></script>
 		<script src="js/lazyload.min.js"></script>
 		<script src="js/lazyloadxt.min.js"></script>
+		<script>
+			fetch("games.html")
+				.then(response => {
+					return response.text()
+				})
+				.then(data => {
+					document.querySelector(".catalog__list").innerHTML = data;
+				});
+		</script>
 </body>
 
 </html>
