@@ -1,0 +1,5303 @@
+<!doctype html>
+<html amp lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="canonical" href="index.html">
+	<title>Booi</title>
+	<style amp-custom>
+		body {
+			--wp--preset--color--black: #000000;
+			--wp--preset--color--cyan-bluish-gray: #abb8c3;
+			--wp--preset--color--white: #ffffff;
+			--wp--preset--color--pale-pink: #f78da7;
+			--wp--preset--color--vivid-red: #cf2e2e;
+			--wp--preset--color--luminous-vivid-orange: #ff6900;
+			--wp--preset--color--luminous-vivid-amber: #fcb900;
+			--wp--preset--color--light-green-cyan: #7bdcb5;
+			--wp--preset--color--vivid-green-cyan: #00d084;
+			--wp--preset--color--pale-cyan-blue: #8ed1fc;
+			--wp--preset--color--vivid-cyan-blue: #0693e3;
+			--wp--preset--color--vivid-purple: #9b51e0;
+			--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+			--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+			--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+			--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+			--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+			--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+			--wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+			--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+			--wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+			--wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+			--wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+			--wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+			--wp--preset--font-size--small: 13px;
+			--wp--preset--font-size--medium: 20px;
+			--wp--preset--font-size--large: 36px;
+			--wp--preset--font-size--x-large: 42px;
+			--wp--preset--spacing--20: 0.44rem;
+			--wp--preset--spacing--30: 0.67rem;
+			--wp--preset--spacing--40: 1rem;
+			--wp--preset--spacing--50: 1.5rem;
+			--wp--preset--spacing--60: 2.25rem;
+			--wp--preset--spacing--70: 3.38rem;
+			--wp--preset--spacing--80: 5.06rem;
+			--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+			--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+			--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+			--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+			--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+		}
+
+		:where(.is-layout-flex) {
+			gap: 0.5em;
+		}
+
+		:where(.is-layout-grid) {
+			gap: 0.5em;
+		}
+
+		body .is-layout-flow>.alignleft {
+			float: left;
+			margin-inline-start: 0;
+			margin-inline-end: 2em;
+		}
+
+		body .is-layout-flow>.alignright {
+			float: right;
+			margin-inline-start: 2em;
+			margin-inline-end: 0;
+		}
+
+		body .is-layout-flow>.aligncenter {
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+
+		body .is-layout-constrained>.alignleft {
+			float: left;
+			margin-inline-start: 0;
+			margin-inline-end: 2em;
+		}
+
+		body .is-layout-constrained>.alignright {
+			float: right;
+			margin-inline-start: 2em;
+			margin-inline-end: 0;
+		}
+
+		body .is-layout-constrained>.aligncenter {
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+
+		body .is-layout-constrained> :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+			max-width: var(--wp--style--global--content-size);
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+
+		body .is-layout-constrained>.alignwide {
+			max-width: var(--wp--style--global--wide-size);
+		}
+
+		body .is-layout-flex {
+			display: flex;
+		}
+
+		body .is-layout-flex {
+			flex-wrap: wrap;
+			align-items: center;
+		}
+
+		body .is-layout-flex>* {
+			margin: 0;
+		}
+
+		body .is-layout-grid {
+			display: grid;
+		}
+
+		body .is-layout-grid>* {
+			margin: 0;
+		}
+
+		:where(.wp-block-columns.is-layout-flex) {
+			gap: 2em;
+		}
+
+		:where(.wp-block-columns.is-layout-grid) {
+			gap: 2em;
+		}
+
+		:where(.wp-block-post-template.is-layout-flex) {
+			gap: 1.25em;
+		}
+
+		:where(.wp-block-post-template.is-layout-grid) {
+			gap: 1.25em;
+		}
+
+		.has-black-color {
+			color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-color {
+			color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-color {
+			color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-color {
+			color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-color {
+			color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-color {
+			color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-color {
+			color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-color {
+			color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-color {
+			color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-color {
+			color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-color {
+			color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-color {
+			color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-black-background-color {
+			background-color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-background-color {
+			background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-background-color {
+			background-color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-background-color {
+			background-color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-background-color {
+			background-color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-background-color {
+			background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-background-color {
+			background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-background-color {
+			background-color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-background-color {
+			background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-background-color {
+			background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-background-color {
+			background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-background-color {
+			background-color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-black-border-color {
+			border-color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-border-color {
+			border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-border-color {
+			border-color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-border-color {
+			border-color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-border-color {
+			border-color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-border-color {
+			border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-border-color {
+			border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-border-color {
+			border-color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-border-color {
+			border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-border-color {
+			border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-border-color {
+			border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-border-color {
+			border-color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+			background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+		}
+
+		.has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+			background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+		}
+
+		.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+			background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-orange-to-vivid-red-gradient-background {
+			background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+		}
+
+		.has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+			background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+		}
+
+		.has-cool-to-warm-spectrum-gradient-background {
+			background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+		}
+
+		.has-blush-light-purple-gradient-background {
+			background: var(--wp--preset--gradient--blush-light-purple) !important;
+		}
+
+		.has-blush-bordeaux-gradient-background {
+			background: var(--wp--preset--gradient--blush-bordeaux) !important;
+		}
+
+		.has-luminous-dusk-gradient-background {
+			background: var(--wp--preset--gradient--luminous-dusk) !important;
+		}
+
+		.has-pale-ocean-gradient-background {
+			background: var(--wp--preset--gradient--pale-ocean) !important;
+		}
+
+		.has-electric-grass-gradient-background {
+			background: var(--wp--preset--gradient--electric-grass) !important;
+		}
+
+		.has-midnight-gradient-background {
+			background: var(--wp--preset--gradient--midnight) !important;
+		}
+
+		.has-small-font-size {
+			font-size: var(--wp--preset--font-size--small) !important;
+		}
+
+		.has-medium-font-size {
+			font-size: var(--wp--preset--font-size--medium) !important;
+		}
+
+		.has-large-font-size {
+			font-size: var(--wp--preset--font-size--large) !important;
+		}
+
+		.has-x-large-font-size {
+			font-size: var(--wp--preset--font-size--x-large) !important;
+		}
+
+		.wp-block-navigation a:where(:not(.wp-element-button)) {
+			color: inherit;
+		}
+
+		:where(.wp-block-post-template.is-layout-flex) {
+			gap: 1.25em;
+		}
+
+		:where(.wp-block-post-template.is-layout-grid) {
+			gap: 1.25em;
+		}
+
+		:where(.wp-block-columns.is-layout-flex) {
+			gap: 2em;
+		}
+
+		:where(.wp-block-columns.is-layout-grid) {
+			gap: 2em;
+		}
+
+		.wp-block-pullquote {
+			font-size: 1.5em;
+			line-height: 1.6;
+		}
+
+		/*  */
+
+		@font-face {
+			font-family: swiper-icons;
+			src: url("data:application/font-woff;charset=utf-8;base64, d09GRgABAAAAAAZgABAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAGRAAAABoAAAAci6qHkUdERUYAAAWgAAAAIwAAACQAYABXR1BPUwAABhQAAAAuAAAANuAY7+xHU1VCAAAFxAAAAFAAAABm2fPczU9TLzIAAAHcAAAASgAAAGBP9V5RY21hcAAAAkQAAACIAAABYt6F0cBjdnQgAAACzAAAAAQAAAAEABEBRGdhc3AAAAWYAAAACAAAAAj//wADZ2x5ZgAAAywAAADMAAAD2MHtryVoZWFkAAABbAAAADAAAAA2E2+eoWhoZWEAAAGcAAAAHwAAACQC9gDzaG10eAAAAigAAAAZAAAArgJkABFsb2NhAAAC0AAAAFoAAABaFQAUGG1heHAAAAG8AAAAHwAAACAAcABAbmFtZQAAA/gAAAE5AAACXvFdBwlwb3N0AAAFNAAAAGIAAACE5s74hXjaY2BkYGAAYpf5Hu/j+W2+MnAzMYDAzaX6QjD6/4//Bxj5GA8AuRwMYGkAPywL13jaY2BkYGA88P8Agx4j+/8fQDYfA1AEBWgDAIB2BOoAeNpjYGRgYNBh4GdgYgABEMnIABJzYNADCQAACWgAsQB42mNgYfzCOIGBlYGB0YcxjYGBwR1Kf2WQZGhhYGBiYGVmgAFGBiQQkOaawtDAoMBQxXjg/wEGPcYDDA4wNUA2CCgwsAAAO4EL6gAAeNpj2M0gyAACqxgGNWBkZ2D4/wMA+xkDdgAAAHjaY2BgYGaAYBkGRgYQiAHyGMF8FgYHIM3DwMHABGQrMOgyWDLEM1T9/w8UBfEMgLzE////P/5//f/V/xv+r4eaAAeMbAxwIUYmIMHEgKYAYjUcsDAwsLKxc3BycfPw8jEQA/gZBASFhEVExcQlJKWkZWTl5BUUlZRVVNXUNTQZBgMAAMR+E+gAEQFEAAAAKgAqACoANAA+AEgAUgBcAGYAcAB6AIQAjgCYAKIArAC2AMAAygDUAN4A6ADyAPwBBgEQARoBJAEuATgBQgFMAVYBYAFqAXQBfgGIAZIBnAGmAbIBzgHsAAB42u2NMQ6CUAyGW568x9AneYYgm4MJbhKFaExIOAVX8ApewSt4Bic4AfeAid3VOBixDxfPYEza5O+Xfi04YADggiUIULCuEJK8VhO4bSvpdnktHI5QCYtdi2sl8ZnXaHlqUrNKzdKcT8cjlq+rwZSvIVczNiezsfnP/uznmfPFBNODM2K7MTQ45YEAZqGP81AmGGcF3iPqOop0r1SPTaTbVkfUe4HXj97wYE+yNwWYxwWu4v1ugWHgo3S1XdZEVqWM7ET0cfnLGxWfkgR42o2PvWrDMBSFj/IHLaF0zKjRgdiVMwScNRAoWUoH78Y2icB/yIY09An6AH2Bdu/UB+yxopYshQiEvnvu0dURgDt8QeC8PDw7Fpji3fEA4z/PEJ6YOB5hKh4dj3EvXhxPqH/SKUY3rJ7srZ4FZnh1PMAtPhwP6fl2PMJMPDgeQ4rY8YT6Gzao0eAEA409DuggmTnFnOcSCiEiLMgxCiTI6Cq5DZUd3Qmp10vO0LaLTd2cjN4fOumlc7lUYbSQcZFkutRG7g6JKZKy0RmdLY680CDnEJ+UMkpFFe1RN7nxdVpXrC4aTtnaurOnYercZg2YVmLN/d/gczfEimrE/fs/bOuq29Zmn8tloORaXgZgGa78yO9/cnXm2BpaGvq25Dv9S4E9+5SIc9PqupJKhYFSSl47+Qcr1mYNAAAAeNptw0cKwkAAAMDZJA8Q7OUJvkLsPfZ6zFVERPy8qHh2YER+3i/BP83vIBLLySsoKimrqKqpa2hp6+jq6RsYGhmbmJqZSy0sraxtbO3sHRydnEMU4uR6yx7JJXveP7WrDycAAAAAAAH//wACeNpjYGRgYOABYhkgZgJCZgZNBkYGLQZtIJsFLMYAAAw3ALgAeNolizEKgDAQBCchRbC2sFER0YD6qVQiBCv/H9ezGI6Z5XBAw8CBK/m5iQQVauVbXLnOrMZv2oLdKFa8Pjuru2hJzGabmOSLzNMzvutpB3N42mNgZGBg4GKQYzBhYMxJLMlj4GBgAYow/P/PAJJhLM6sSoWKfWCAAwDAjgbRAAB42mNgYGBkAIIbCZo5IPrmUn0hGA0AO8EFTQAA") format("woff");
+			font-weight: 400;
+			font-style: normal
+		}
+
+		:root {
+			--swiper-theme-color: #007aff
+		}
+
+		.swiper-container {
+			margin-left: auto;
+			margin-right: auto;
+			position: relative;
+			overflow: hidden;
+			list-style: none;
+			padding: 0;
+			z-index: 1
+		}
+
+		.swiper-container-vertical>.swiper-wrapper {
+			flex-direction: column
+		}
+
+		.swiper-wrapper {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			display: flex;
+			transition-property: transform;
+			box-sizing: content-box
+		}
+
+		.swiper-container-android .swiper-slide,
+		.swiper-wrapper {
+			transform: translate3d(0, 0, 0)
+		}
+
+		.swiper-container-multirow>.swiper-wrapper {
+			flex-wrap: wrap
+		}
+
+		.swiper-container-multirow-column>.swiper-wrapper {
+			flex-wrap: wrap;
+			flex-direction: column
+		}
+
+		.swiper-container-free-mode>.swiper-wrapper {
+			transition-timing-function: ease-out;
+			margin: 0 auto
+		}
+
+		.swiper-slide {
+			flex-shrink: 0;
+			width: 100%;
+			height: 100%;
+			position: relative;
+			transition-property: transform
+		}
+
+		.swiper-slide-invisible-blank {
+			visibility: hidden
+		}
+
+		.swiper-container-autoheight,
+		.swiper-container-autoheight .swiper-slide {
+			height: auto
+		}
+
+		.swiper-container-autoheight .swiper-wrapper {
+			align-items: flex-start;
+			transition-property: transform, height
+		}
+
+		.swiper-container-3d {
+			perspective: 1200px
+		}
+
+		.swiper-container-3d .swiper-cube-shadow,
+		.swiper-container-3d .swiper-slide,
+		.swiper-container-3d .swiper-slide-shadow-bottom,
+		.swiper-container-3d .swiper-slide-shadow-left,
+		.swiper-container-3d .swiper-slide-shadow-right,
+		.swiper-container-3d .swiper-slide-shadow-top,
+		.swiper-container-3d .swiper-wrapper {
+			transform-style: preserve-3d
+		}
+
+		.swiper-container-3d .swiper-slide-shadow-bottom,
+		.swiper-container-3d .swiper-slide-shadow-left,
+		.swiper-container-3d .swiper-slide-shadow-right,
+		.swiper-container-3d .swiper-slide-shadow-top {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+			z-index: 10
+		}
+
+		.swiper-container-3d .swiper-slide-shadow-left {
+			background-image: linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0))
+		}
+
+		.swiper-container-3d .swiper-slide-shadow-right {
+			background-image: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0))
+		}
+
+		.swiper-container-3d .swiper-slide-shadow-top {
+			background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0))
+		}
+
+		.swiper-container-3d .swiper-slide-shadow-bottom {
+			background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0))
+		}
+
+		.swiper-container-css-mode>.swiper-wrapper {
+			overflow: auto;
+			scrollbar-width: none;
+			-ms-overflow-style: none
+		}
+
+		.swiper-container-css-mode>.swiper-wrapper::-webkit-scrollbar {
+			display: none
+		}
+
+		.swiper-container-css-mode>.swiper-wrapper>.swiper-slide {
+			scroll-snap-align: start start
+		}
+
+		.swiper-container-horizontal.swiper-container-css-mode>.swiper-wrapper {
+			scroll-snap-type: x mandatory
+		}
+
+		.swiper-container-vertical.swiper-container-css-mode>.swiper-wrapper {
+			scroll-snap-type: y mandatory
+		}
+
+		:root {
+			--swiper-navigation-size: 44px
+		}
+
+		.swiper-button-next,
+		.swiper-button-prev {
+			position: absolute;
+			top: 50%;
+			width: calc(var(--swiper-navigation-size)/ 44 * 27);
+			height: var(--swiper-navigation-size);
+			margin-top: calc(-1 * var(--swiper-navigation-size)/ 2);
+			z-index: 10;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--swiper-navigation-color, var(--swiper-theme-color))
+		}
+
+		.swiper-button-next.swiper-button-disabled,
+		.swiper-button-prev.swiper-button-disabled {
+			opacity: .35;
+			cursor: auto;
+			pointer-events: none
+		}
+
+		.swiper-button-next:after,
+		.swiper-button-prev:after {
+			font-family: swiper-icons;
+			font-size: var(--swiper-navigation-size);
+			text-transform: none !important;
+			letter-spacing: 0;
+			text-transform: none;
+			font-variant: initial;
+			line-height: 1
+		}
+
+		.swiper-button-prev,
+		.swiper-container-rtl .swiper-button-next {
+			left: 10px;
+			right: auto
+		}
+
+		.swiper-button-prev:after,
+		.swiper-container-rtl .swiper-button-next:after {
+			content: 'prev'
+		}
+
+		.swiper-button-next,
+		.swiper-container-rtl .swiper-button-prev {
+			right: 10px;
+			left: auto
+		}
+
+		.swiper-button-next:after,
+		.swiper-container-rtl .swiper-button-prev:after {
+			content: 'next'
+		}
+
+		.swiper-button-next.swiper-button-white,
+		.swiper-button-prev.swiper-button-white {
+			--swiper-navigation-color: #ffffff
+		}
+
+		.swiper-button-next.swiper-button-black,
+		.swiper-button-prev.swiper-button-black {
+			--swiper-navigation-color: #000000
+		}
+
+		.swiper-button-lock {
+			display: none
+		}
+
+		.swiper-pagination {
+			position: absolute;
+			text-align: center;
+			transition: .3s opacity;
+			transform: translate3d(0, 0, 0);
+			z-index: 10
+		}
+
+		.swiper-pagination.swiper-pagination-hidden {
+			opacity: 0
+		}
+
+		.swiper-container-horizontal>.swiper-pagination-bullets,
+		.swiper-pagination-custom,
+		.swiper-pagination-fraction {
+			bottom: 10px;
+			left: 0;
+			width: 100%
+		}
+
+		.swiper-pagination-bullets-dynamic {
+			overflow: hidden;
+			font-size: 0
+		}
+
+		.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+			transform: scale(.33);
+			position: relative
+		}
+
+		.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active {
+			transform: scale(1)
+		}
+
+		.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-main {
+			transform: scale(1)
+		}
+
+		.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev {
+			transform: scale(.66)
+		}
+
+		.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev {
+			transform: scale(.33)
+		}
+
+		.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next {
+			transform: scale(.66)
+		}
+
+		.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next {
+			transform: scale(.33)
+		}
+
+		.swiper-pagination-bullet {
+			width: 8px;
+			height: 8px;
+			display: inline-block;
+			border-radius: 100%;
+			background: #000;
+			opacity: .2
+		}
+
+		button.swiper-pagination-bullet {
+			border: none;
+			margin: 0;
+			padding: 0;
+			box-shadow: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none
+		}
+
+		.swiper-pagination-clickable .swiper-pagination-bullet {
+			cursor: pointer
+		}
+
+		.swiper-pagination-bullet-active {
+			opacity: 1;
+			background: var(--swiper-pagination-color, var(--swiper-theme-color))
+		}
+
+		.swiper-container-vertical>.swiper-pagination-bullets {
+			right: 10px;
+			top: 50%;
+			transform: translate3d(0, -50%, 0)
+		}
+
+		.swiper-container-vertical>.swiper-pagination-bullets .swiper-pagination-bullet {
+			margin: 6px 0;
+			display: block
+		}
+
+		.swiper-container-vertical>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+			top: 50%;
+			transform: translateY(-50%);
+			width: 8px
+		}
+
+		.swiper-container-vertical>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+			display: inline-block;
+			transition: .2s transform, .2s top
+		}
+
+		.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+			margin: 0 4px
+		}
+
+		.swiper-container-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+			left: 50%;
+			transform: translateX(-50%);
+			white-space: nowrap
+		}
+
+		.swiper-container-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+			transition: .2s transform, .2s left
+		}
+
+		.swiper-container-horizontal.swiper-container-rtl>.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+			transition: .2s transform, .2s right
+		}
+
+		.swiper-pagination-progressbar {
+			background: rgba(0, 0, 0, .25);
+			position: absolute
+		}
+
+		.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+			background: var(--swiper-pagination-color, var(--swiper-theme-color));
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			transform: scale(0);
+			transform-origin: left top
+		}
+
+		.swiper-container-rtl .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+			transform-origin: right top
+		}
+
+		.swiper-container-horizontal>.swiper-pagination-progressbar,
+		.swiper-container-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+			width: 100%;
+			height: 4px;
+			left: 0;
+			top: 0
+		}
+
+		.swiper-container-horizontal>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,
+		.swiper-container-vertical>.swiper-pagination-progressbar {
+			width: 4px;
+			height: 100%;
+			left: 0;
+			top: 0
+		}
+
+		.swiper-pagination-white {
+			--swiper-pagination-color: #ffffff
+		}
+
+		.swiper-pagination-black {
+			--swiper-pagination-color: #000000
+		}
+
+		.swiper-pagination-lock {
+			display: none
+		}
+
+		.swiper-scrollbar {
+			border-radius: 10px;
+			position: relative;
+			-ms-touch-action: none;
+			background: rgba(0, 0, 0, .1)
+		}
+
+		.swiper-container-horizontal>.swiper-scrollbar {
+			position: absolute;
+			left: 1%;
+			bottom: 3px;
+			z-index: 50;
+			height: 5px;
+			width: 98%
+		}
+
+		.swiper-container-vertical>.swiper-scrollbar {
+			position: absolute;
+			right: 3px;
+			top: 1%;
+			z-index: 50;
+			width: 5px;
+			height: 98%
+		}
+
+		.swiper-scrollbar-drag {
+			height: 100%;
+			width: 100%;
+			position: relative;
+			background: rgba(0, 0, 0, .5);
+			border-radius: 10px;
+			left: 0;
+			top: 0
+		}
+
+		.swiper-scrollbar-cursor-drag {
+			cursor: move
+		}
+
+		.swiper-scrollbar-lock {
+			display: none
+		}
+
+		.swiper-zoom-container {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center
+		}
+
+		.swiper-zoom-container>canvas,
+		.swiper-zoom-container>img,
+		.swiper-zoom-container>svg {
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: contain
+		}
+
+		.swiper-slide-zoomed {
+			cursor: move
+		}
+
+		.swiper-lazy-preloader {
+			width: 42px;
+			height: 42px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -21px;
+			margin-top: -21px;
+			z-index: 10;
+			transform-origin: 50%;
+			animation: swiper-preloader-spin 1s infinite linear;
+			box-sizing: border-box;
+			border: 4px solid var(--swiper-preloader-color, var(--swiper-theme-color));
+			border-radius: 50%;
+			border-top-color: transparent
+		}
+
+		.swiper-lazy-preloader-white {
+			--swiper-preloader-color: #fff
+		}
+
+		.swiper-lazy-preloader-black {
+			--swiper-preloader-color: #000
+		}
+
+		@keyframes swiper-preloader-spin {
+			100% {
+				transform: rotate(360deg)
+			}
+		}
+
+		.swiper-container .swiper-notification {
+			position: absolute;
+			left: 0;
+			top: 0;
+			pointer-events: none;
+			opacity: 0;
+			z-index: -1000
+		}
+
+		.swiper-container-fade.swiper-container-free-mode .swiper-slide {
+			transition-timing-function: ease-out
+		}
+
+		.swiper-container-fade .swiper-slide {
+			pointer-events: none;
+			transition-property: opacity
+		}
+
+		.swiper-container-fade .swiper-slide .swiper-slide {
+			pointer-events: none
+		}
+
+		.swiper-container-fade .swiper-slide-active,
+		.swiper-container-fade .swiper-slide-active .swiper-slide-active {
+			pointer-events: auto
+		}
+
+		.swiper-container-cube {
+			overflow: visible
+		}
+
+		.swiper-container-cube .swiper-slide {
+			pointer-events: none;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+			z-index: 1;
+			visibility: hidden;
+			transform-origin: 0 0;
+			width: 100%;
+			height: 100%
+		}
+
+		.swiper-container-cube .swiper-slide .swiper-slide {
+			pointer-events: none
+		}
+
+		.swiper-container-cube.swiper-container-rtl .swiper-slide {
+			transform-origin: 100% 0
+		}
+
+		.swiper-container-cube .swiper-slide-active,
+		.swiper-container-cube .swiper-slide-active .swiper-slide-active {
+			pointer-events: auto
+		}
+
+		.swiper-container-cube .swiper-slide-active,
+		.swiper-container-cube .swiper-slide-next,
+		.swiper-container-cube .swiper-slide-next+.swiper-slide,
+		.swiper-container-cube .swiper-slide-prev {
+			pointer-events: auto;
+			visibility: visible
+		}
+
+		.swiper-container-cube .swiper-slide-shadow-bottom,
+		.swiper-container-cube .swiper-slide-shadow-left,
+		.swiper-container-cube .swiper-slide-shadow-right,
+		.swiper-container-cube .swiper-slide-shadow-top {
+			z-index: 0;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden
+		}
+
+		.swiper-container-cube .swiper-cube-shadow {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			background: #000;
+			opacity: .6;
+			-webkit-filter: blur(50px);
+			filter: blur(50px);
+			z-index: 0
+		}
+
+		.swiper-container-flip {
+			overflow: visible
+		}
+
+		.swiper-container-flip .swiper-slide {
+			pointer-events: none;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+			z-index: 1
+		}
+
+		.swiper-container-flip .swiper-slide .swiper-slide {
+			pointer-events: none
+		}
+
+		.swiper-container-flip .swiper-slide-active,
+		.swiper-container-flip .swiper-slide-active .swiper-slide-active {
+			pointer-events: auto
+		}
+
+		.swiper-container-flip .swiper-slide-shadow-bottom,
+		.swiper-container-flip .swiper-slide-shadow-left,
+		.swiper-container-flip .swiper-slide-shadow-right,
+		.swiper-container-flip .swiper-slide-shadow-top {
+			z-index: 0;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden
+		}
+
+		html {
+			font-family: sans-serif;
+			-ms-text-size-adjust: 100%;
+			-webkit-text-size-adjust: 100%
+		}
+
+		body {
+			margin: 0
+		}
+
+		article,
+		aside,
+		details,
+		figcaption,
+		figure,
+		footer,
+		header,
+		hgroup,
+		main,
+		menu,
+		nav,
+		section,
+		summary {
+			display: block
+		}
+
+		audio,
+		canvas,
+		progress,
+		video {
+			display: inline-block;
+			vertical-align: baseline
+		}
+
+		audio:not([controls]) {
+			display: none;
+			height: 0
+		}
+
+		[hidden],
+		template {
+			display: none
+		}
+
+		a {
+			background: 0 0
+		}
+
+		a:active,
+		a:hover {
+			outline: 0
+		}
+
+		abbr[title] {
+			border-bottom: 1px dotted
+		}
+
+		b,
+		strong {
+			font-weight: 700
+		}
+
+		dfn {
+			font-style: italic
+		}
+
+		h1 {
+			font-size: 2em;
+			margin: .67em 0
+		}
+
+		mark {
+			background: #ff0;
+			color: #000
+		}
+
+		small {
+			font-size: 80%
+		}
+
+		sub,
+		sup {
+			font-size: 75%;
+			line-height: 0;
+			position: relative;
+			vertical-align: baseline
+		}
+
+		sup {
+			top: -.5em
+		}
+
+		sub {
+			bottom: -.25em
+		}
+
+		img {
+			border: 0
+		}
+
+		svg:not(:root) {
+			overflow: hidden
+		}
+
+		figure {
+			margin: 1em 40px
+		}
+
+		hr {
+			box-sizing: content-box;
+			height: 0
+		}
+
+		pre {
+			overflow: auto
+		}
+
+		code,
+		kbd,
+		pre,
+		samp {
+			font: 1em monospace, monospace
+		}
+
+		button,
+		input,
+		optgroup,
+		select,
+		textarea {
+			color: inherit;
+			font: inherit;
+			margin: 0
+		}
+
+		button {
+			overflow: visible
+		}
+
+		button,
+		select {
+			text-transform: none
+		}
+
+		button,
+		html input[type=button],
+		input[type=reset],
+		input[type=submit] {
+			-webkit-appearance: button;
+			cursor: pointer
+		}
+
+		button[disabled],
+		html input[disabled] {
+			cursor: default
+		}
+
+		button::-moz-focus-inner,
+		input::-moz-focus-inner {
+			border: 0;
+			padding: 0
+		}
+
+		input {
+			line-height: normal
+		}
+
+		input[type=checkbox],
+		input[type=radio] {
+			box-sizing: border-box;
+			padding: 0
+		}
+
+		input[type=number]::-webkit-inner-spin-button,
+		input[type=number]::-webkit-outer-spin-button {
+			height: auto
+		}
+
+		input[type=search] {
+			-webkit-appearance: textfield;
+			box-sizing: content-box
+		}
+
+		input[type=search]::-webkit-search-cancel-button,
+		input[type=search]::-webkit-search-decoration {
+			-webkit-appearance: none
+		}
+
+		fieldset {
+			border: 1px solid silver;
+			margin: 0 2px;
+			padding: .35em .625em .75em
+		}
+
+		legend {
+			border: 0;
+			padding: 0
+		}
+
+		textarea {
+			overflow: auto
+		}
+
+		optgroup {
+			font-weight: 700
+		}
+
+		table {
+			border-collapse: collapse;
+			border-spacing: 0
+		}
+
+		td,
+		th {
+			padding: 0
+		}
+
+		*,
+		::after,
+		::before {
+			box-sizing: border-box
+		}
+
+		ol,
+		ul {
+			padding: 0
+		}
+
+		blockquote,
+		body,
+		dd,
+		dl,
+		figcaption,
+		figure,
+		h1,
+		h2,
+		h3,
+		h4,
+		li,
+		ol,
+		p,
+		ul {
+			margin: 0
+		}
+
+		body {
+			min-height: 100vh;
+			scroll-behavior: smooth;
+			text-rendering: optimizeSpeed;
+			line-height: 1.5
+		}
+
+		ol[class],
+		ul[class] {
+			list-style: none
+		}
+
+		a:not([class]) {
+			-webkit-text-decoration-skip: ink;
+			text-decoration-skip-ink: auto
+		}
+
+		img {
+			max-width: 100%;
+			display: block
+		}
+
+		article>*+* {
+			margin-top: 1em
+		}
+
+		button,
+		input,
+		select,
+		textarea {
+			font: inherit
+		}
+
+		@media (prefers-reduced-motion:reduce) {
+			* {
+				-webkit-animation-duration: 0s !important;
+				animation-duration: 0s !important;
+				-webkit-animation-iteration-count: 1 !important;
+				animation-iteration-count: 1 !important;
+				transition-duration: 0s !important;
+				scroll-behavior: auto !important
+			}
+		}
+
+		@font-face {
+			font-display: swap;
+			font-family: 'Open Sans';
+			src: url("fonts/OpenSans/OpenSans-Regular.ttf");
+			font-weight: 400;
+			font-style: normal
+		}
+
+		@font-face {
+			font-display: swap;
+			font-family: 'Open Sans';
+			src: url("fonts/OpenSans/OpenSans-SemiBoldItalic.ttf");
+			font-weight: 600;
+			font-style: italic
+		}
+
+		@font-face {
+			font-display: swap;
+			font-family: 'Open Sans';
+			src: url("fonts/OpenSans/OpenSans-Italic.ttf");
+			font-weight: 400;
+			font-style: italic
+		}
+
+		@font-face {
+			font-display: swap;
+			font-family: 'Open Sans';
+			src: url("fonts/OpenSans/OpenSans-SemiBold.ttf");
+			font-weight: 600;
+			font-style: normal
+		}
+
+		@font-face {
+			font-display: swap;
+			font-family: 'Open Sans';
+			src: url("fonts/OpenSans/OpenSans-ExtraBold.ttf");
+			font-weight: 800;
+			font-style: normal
+		}
+
+		@font-face {
+			font-display: swap;
+			font-family: 'Open Sans';
+			src: url("fonts/OpenSans/OpenSans-BoldItalic.ttf");
+			font-weight: 700;
+			font-style: italic
+		}
+
+		@font-face {
+			font-display: swap;
+			font-family: 'Open Sans';
+			src: url("fonts/OpenSans/OpenSans-LightItalic.ttf");
+			font-weight: 300;
+			font-style: italic
+		}
+
+		@font-face {
+			font-display: swap;
+			font-family: 'Open Sans';
+			src: url("fonts/OpenSans/OpenSans-Bold.ttf");
+			font-weight: 700;
+			font-style: normal
+		}
+
+		@font-face {
+			font-display: swap;
+			font-family: 'Open Sans';
+			src: url("fonts/OpenSans/OpenSans-ExtraBoldItalic.ttf");
+			font-weight: 800;
+			font-style: italic
+		}
+
+		@font-face {
+			font-display: swap;
+			font-family: 'Open Sans';
+			src: url("fonts/OpenSans/OpenSans-Light.ttf");
+			font-weight: 300;
+			font-style: normal
+		}
+
+		.container {
+			max-width: 1340px;
+			margin: 0 auto;
+			padding: 0 10px;
+			width: 100%
+		}
+
+		.layout {
+			position: relative;
+			margin: 0 -20px
+		}
+
+		.layout__main {
+			padding: 20px
+		}
+
+		.layout__aside {
+			padding: 20px
+		}
+
+		.layout__title {
+			text-align: center;
+			width: 100%;
+			display: inline-flex;
+			margin: 20px 0;
+			font-size: 2.6rem;
+			line-height: 1.2
+		}
+
+		.layout__title.center {
+			justify-content: center
+		}
+
+		.main__content {
+			padding-top: 80px !important
+		}
+
+		.main__name {
+			font-weight: 800;
+			line-height: 1;
+			padding: 15px;
+			font-size: 2.4rem;
+			letter-spacing: 4px;
+			text-transform: uppercase;
+			-webkit-clip-path: polygon(0 0, 100% 11%, 98% 86%, 2% 101%);
+			clip-path: polygon(0 0, 100% 11%, 98% 86%, 2% 101%);
+			background: linear-gradient(0deg, #207379 0, #136a8a 99%)
+		}
+
+		.main__name-wrapper {
+			display: flex;
+			justify-content: center;
+			position: relative;
+			width: -webkit-max-content;
+			width: -moz-max-content;
+			width: max-content;
+			margin: 50px auto
+		}
+
+		.main__name_dec-after {
+			position: absolute;
+			z-index: 2;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 70px;
+			height: 10px;
+			fill: #ff0
+		}
+
+		.main__name_dec-before {
+			position: absolute;
+			z-index: 2;
+			top: -10px;
+			right: -10px;
+			width: 30px;
+			height: 5px;
+			transform: rotate(40deg);
+			fill: #e9417d
+		}
+
+		.main__name_dec-dots-l {
+			position: absolute;
+			z-index: 2;
+			fill: #ff0;
+			width: 40px;
+			left: -30px;
+			top: 5px
+		}
+
+		.main__name_dec-dots-f {
+			position: absolute;
+			z-index: 2;
+			fill: #ff0;
+			width: 60px;
+			right: -50px;
+			top: 20px
+		}
+
+		.main__name_dec-circ-l {
+			position: absolute;
+			z-index: 2;
+			fill: #e9417d;
+			top: -20px;
+			left: 30%;
+			width: 15px
+		}
+
+		.main__name_dec-circ-f {
+			position: absolute;
+			z-index: 2;
+			fill: #e9417d;
+			width: 20px;
+			top: -30px;
+			right: 15%
+		}
+
+		.footer,
+		.header {
+			flex-shrink: 0
+		}
+
+		main {
+			flex-grow: 1
+		}
+
+		.list {
+			list-style: none;
+			list-style: none;
+			display: flex;
+			flex-wrap: wrap
+		}
+
+		@media (min-width:768px) {
+			.container {
+				padding: 0 30px
+			}
+
+			.layout {
+				margin: 0 -30px
+			}
+
+			.layout__main {
+				padding-left: 30px;
+				padding-right: 30px
+			}
+
+			.layout__title {
+				margin: 30px 0;
+				font-size: 3.8rem
+			}
+		}
+
+		@media (min-width:992px) {
+			.layout {
+				display: flex;
+				align-items: flex-start
+			}
+
+			.layout__main {
+				padding-bottom: 60px;
+				flex-grow: 1
+			}
+		}
+
+		*,
+		:after,
+		:before {
+			box-sizing: border-box
+		}
+
+		:focus {
+			outline: 0 !important
+		}
+
+		html {
+			font-size: 10px;
+			max-width: 100vw;
+			overflow-x: hidden
+		}
+
+		body {
+			font: 1.4rem/1.5 'Open Sans', Arial, Helvetica, sans-serif;
+			background: #222;
+			color: #fff;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			overflow-x: hidden;
+			max-width: 100%
+		}
+
+		body.body_overflow {
+			overflow: hidden;
+			height: 100vh;
+			width: 100vw
+		}
+
+		body .mt_hidden {
+			display: none
+		}
+
+		body .hidden {
+			height: 0 !important;
+			display: block;
+			background: 0 0;
+			color: transparent
+		}
+
+		iframe,
+		img,
+		video {
+			max-width: 100%;
+			height: auto
+		}
+
+		.img_absolute {
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			min-width: 100%;
+			min-height: 100%;
+			-o-object-fit: cover;
+			object-fit: cover
+		}
+
+		.section {
+			padding: 10px 0
+		}
+
+		.lazyload,
+		.lazyloading {
+			opacity: 0
+		}
+
+		.lazyloaded {
+			opacity: 1;
+			transition: opacity .3s
+		}
+
+		@media (min-width:768px) {
+			body .mt_hidden {
+				display: flex
+			}
+
+			body .t_hidden {
+				display: none
+			}
+
+			.section {
+				padding: 15px 0
+			}
+		}
+
+		.h1,
+		h1 {
+			font-size: 2.92308rem
+		}
+
+		.h2,
+		h2 {
+			font-size: 2.30769rem
+		}
+
+		.h3,
+		h3 {
+			font-size: 2rem
+		}
+
+		.h4,
+		h4 {
+			font-size: 1.69231rem
+		}
+
+		.h5,
+		h5 {
+			font-size: 1rem
+		}
+
+		.h6,
+		h6 {
+			font-size: .8rem
+		}
+
+		ul {
+			margin: 0
+		}
+
+		table {
+			width: 100%;
+			margin-bottom: 15px
+		}
+
+		th {
+			font-weight: 700;
+			text-align: left
+		}
+
+		thead tr th {
+			border-bottom: 1px dashed #e9417d
+		}
+
+		tr:nth-child(2n) {
+			background: rgba(233, 65, 125, .03)
+		}
+
+		tr:last-child td {
+			border-bottom: 1px dashed #e9417d
+		}
+
+		tbody td {
+			padding: 15px 7px
+		}
+
+		.content {
+			padding: 20px 0;
+			color: #e8ebed
+		}
+
+		.content img {
+			margin: 0 auto
+		}
+
+		.content__title h1 {
+			margin-bottom: 0 !important
+		}
+
+		.content a {
+			text-decoration: none;
+			color: #e9417d
+		}
+
+		.content a:hover {
+			text-decoration: underline
+		}
+
+		.content picture {
+			display: block;
+			margin: 0 auto 10px
+		}
+
+		.content picture[class] {
+			margin-bottom: 0
+		}
+
+		.content a[class] {
+			color: #fff
+		}
+
+		.content a[class]:hover {
+			text-decoration: none
+		}
+
+		.content .button_pure,
+		.content .button_yellow {
+			margin: 0 auto 10px;
+			padding: 15px 35px;
+			-webkit-clip-path: polygon(95% 100%, 6% 94%, 1% 18%, 99% 17%);
+			clip-path: polygon(95% 100%, 6% 94%, 1% 18%, 99% 17%)
+		}
+
+		.content .button_pure:hover,
+		.content .button_yellow:hover {
+			transform: scale(1.1)
+		}
+
+		.content .button_yellow {
+			color: #e9417d !important
+		}
+
+		.content ol,
+		.content ul {
+			padding-left: 30px
+		}
+
+		.content ol[class],
+		.content ul[class] {
+			margin: 0;
+			padding: 0
+		}
+
+		.content h1,
+		.content h2,
+		.content h3,
+		.content h4,
+		.content h5,
+		.content h6,
+		.content li,
+		.content ol,
+		.content p,
+		.content ul {
+			margin: 0;
+			margin-bottom: 15px
+		}
+
+		.content .h1,
+		.content .h2,
+		.content .h3,
+		.content .h4,
+		.content .h5,
+		.content .h6,
+		.content h1,
+		.content h2,
+		.content h3,
+		.content h4,
+		.content h5,
+		.content h6 {
+			text-shadow: 2px 2px 0 #e9417d;
+			font-style: italic
+		}
+
+		@media (min-width:768px) {
+
+			.h1,
+			h1 {
+				font-size: 3.8rem
+			}
+
+			.h2,
+			h2 {
+				font-size: 3rem
+			}
+
+			.h3,
+			h3 {
+				font-size: 2.6rem
+			}
+
+			.h4,
+			h4 {
+				font-size: 2.2rem
+			}
+
+			.h5,
+			h5 {
+				font-size: 2rem
+			}
+
+			.h6,
+			h6 {
+				font-size: 1.6rem
+			}
+		}
+
+		.button,
+		a,
+		button,
+		input {
+			color: #fff;
+			background: 0 0;
+			padding: 0;
+			text-decoration: none;
+			font-weight: 600;
+			margin: 0;
+			border: none;
+			outline: 0;
+			cursor: pointer;
+			transition: color .3s, background .3s, border-color .3s, fill .3s, opacity .3s
+		}
+
+		.button_gray,
+		.button_pure,
+		.button_yellow {
+			padding: 10px 15px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: -webkit-max-content;
+			width: -moz-max-content;
+			width: max-content;
+			position: relative;
+			z-index: 1;
+			font-weight: 700;
+			text-transform: uppercase;
+			line-height: 1;
+			transition: .3s;
+			height: -webkit-max-content;
+			height: -moz-max-content;
+			height: max-content
+		}
+
+		.button_center {
+			margin: 10px auto
+		}
+
+		.button-line {
+			text-transform: uppercase
+		}
+
+		.button-line_pure {
+			color: #e9417d;
+			border-bottom: 1px dashed #e9417d
+		}
+
+		.button-line_pure:hover {
+			color: #ff0;
+			border-color: #ff0
+		}
+
+		.button_pure {
+			background: #e9417d;
+			color: #fff
+		}
+
+		.button_pure:hover {
+			color: #ff0
+		}
+
+		.button_yellow {
+			background: #ff0;
+			color: #e9417d
+		}
+
+		.button_anim:hover {
+			transform: scale(1.1);
+			z-index: 2
+		}
+
+		.button_first {
+			padding: 15px;
+			-webkit-clip-path: polygon(0 25%, 100% 0, 100% 100%, 9% 96%);
+			clip-path: polygon(0 25%, 100% 0, 100% 100%, 9% 96%)
+		}
+
+		.button_last {
+			padding: 15px;
+			-webkit-clip-path: polygon(0 13%, 100% 0, 96% 75%, 0 95%);
+			clip-path: polygon(0 13%, 100% 0, 96% 75%, 0 95%)
+		}
+
+		.button__menu {
+			display: block;
+			position: relative;
+			min-width: 50px;
+			width: 50px;
+			height: 50px
+		}
+
+		.button__menu-line {
+			width: 25px;
+			height: 2px;
+			background: #fff;
+			display: block;
+			position: absolute;
+			transition: .3s;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%)
+		}
+
+		.button__menu-line:after,
+		.button__menu-line:before {
+			width: 25px;
+			height: 2px;
+			background: #fff;
+			transition: .3s;
+			display: block;
+			position: absolute;
+			content: ''
+		}
+
+		.button__menu-line:after {
+			top: -9px
+		}
+
+		.button__menu-line:before {
+			top: 9px
+		}
+
+		.button__menu_active .button__menu-line {
+			background: 0 0
+		}
+
+		.button__menu_active .button__menu-line:after,
+		.button__menu_active .button__menu-line:before {
+			top: 0;
+			background: #e9417d
+		}
+
+		.button__menu_active .button__menu-line:after {
+			transform: rotate(45deg)
+		}
+
+		.button__menu_active .button__menu-line:before {
+			transform: rotate(-45deg)
+		}
+
+		@media (min-width:768px) {
+			.button_md {
+				padding: 20px 45px
+			}
+		}
+
+		.header {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 10;
+			transition: .3s;
+			background: linear-gradient(180deg, rgba(0, 0, 0, .6) 0, rgba(0, 0, 0, .5) 10%, rgba(0, 0, 0, .4) 20%, rgba(0, 0, 0, .3) 30%, rgba(0, 0, 0, .2) 40%, rgba(0, 0, 0, .1) 50%, rgba(255, 0, 0, 0) 100%);
+			z-index: 11
+		}
+
+		.header_fixed {
+			background: #1e727c
+		}
+
+		.header_fixed .header__container {
+			height: 50px
+		}
+
+		.header_fixed .logo {
+			margin-bottom: 0
+		}
+
+		.header_fixed .logo {
+			display: flex;
+			align-items: center;
+			width: 70px
+		}
+
+		.header_fixed .logo img {
+			height: 80%
+		}
+
+		.header_fixed .logo__svg {
+			display: none
+		}
+
+		.header_active {
+			background: #222;
+			height: 80px
+		}
+
+		.header__container {
+			display: flex;
+			position: relative;
+			height: 80px;
+			align-items: center;
+			transition: .3s
+		}
+
+		.header__fixed {
+			box-shadow: 0 2px 10px rgba(0, 0, 0, .5)
+		}
+
+		.navigation {
+			padding: 10px 0;
+			display: flex;
+			justify-content: space-between;
+			flex: 1 0;
+			height: 100%
+		}
+
+		.navigation__container {
+			display: block;
+			position: absolute;
+			top: 75px;
+			left: 0;
+			opacity: 0;
+			width: 100%;
+			background: #222;
+			height: 0 !important;
+			transition: .3s
+		}
+
+		.navigation__container_visible {
+			top: 80px;
+			opacity: 1;
+			height: calc(100vh - 80px) !important
+		}
+
+		.navigation__list {
+			display: flex;
+			flex-direction: column;
+			max-height: 100%;
+			flex: 1 0 100%;
+			padding: 20px 10px;
+			top: -50px
+		}
+
+		.navigation__item {
+			position: relative;
+			display: flex;
+			flex: 1 0 100%
+		}
+
+		.navigation__item:hover>.sub-menu {
+			display: block
+		}
+
+		.navigation__item .sub-menu {
+			display: none;
+			position: absolute;
+			left: 0;
+			top: 100%;
+			border-radius: 5px;
+			border: 1px solid #ff0;
+			background: rgba(0, 0, 0, .5)
+		}
+
+		.navigation__item .sub-menu li {
+			padding: 0 10px
+		}
+
+		.navigation__item .sub-menu .sub-menu {
+			left: 100%;
+			top: 0;
+			min-width: 200px
+		}
+
+		.navigation__link {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 10px 0;
+			transition: .3s
+		}
+
+		.navigation__link-svg {
+			width: 20px;
+			height: 20px;
+			fill: #fff;
+			margin-right: 10px
+		}
+
+		.navigation__link:hover {
+			color: #ff0;
+			transform: scale(1.05)
+		}
+
+		.navigation__link:hover .navigation__link-svg {
+			fill: #ff0
+		}
+
+		.navigation__links {
+			display: flex;
+			flex-direction: column;
+			position: absolute;
+			align-items: flex-end;
+			top: 10px;
+			right: 60px
+		}
+
+		.navigation__links .button_first {
+			margin-right: 15px
+		}
+
+		.navigation__links .button_last {
+			margin-top: -15px
+		}
+
+		.logo {
+			width: 50px;
+			display: flex;
+			margin-bottom: -10px;
+			justify-content: center;
+			align-items: center
+		}
+
+		.logo__svg {
+			display: block;
+			width: 100%
+		}
+
+		.logo__active {
+			display: none
+		}
+
+		@media (max-width:768px) {
+			.header__container {
+				padding: 0 10px
+			}
+
+			.navigation__item {
+				flex-direction: column;
+				align-items: flex-start
+			}
+
+			.sub-menu {
+				display: block !important;
+				border: none !important;
+				position: relative !important;
+				top: 0 !important;
+				left: 0 !important;
+				padding-left: 10px;
+				width: 100%;
+				background: 0 0 !important
+			}
+		}
+
+		@media (min-width:768px) {
+			.logo {
+				width: 60px;
+				min-width: 60px;
+				margin-bottom: -40px
+			}
+
+			.navigation {
+				height: 100%;
+				padding: 0
+			}
+
+			.navigation__container {
+				height: 100%;
+				background: 0 0;
+				display: flex;
+				align-items: center;
+				position: relative;
+				top: 0;
+				height: 100% !important;
+				opacity: 1
+			}
+
+			.navigation__list {
+				padding: 0 20px;
+				height: 100%;
+				flex-direction: row
+			}
+
+			.navigation__item {
+				flex: 1 0 100px
+			}
+
+			.navigation__link {
+				font-size: 1.6rem
+			}
+
+			.navigation__link-svg {
+				width: 30px;
+				height: 30px
+			}
+
+			.navigation__links {
+				position: relative;
+				right: 0
+			}
+		}
+
+		@media (min-width:992px) {
+			.navigation__link {
+				font-size: 1.8rem
+			}
+		}
+
+		@media (min-width:1200px) {
+			.navigation__list {
+				padding: 0 20px 0 30px
+			}
+
+			.navigation__link {
+				font-size: 2rem
+			}
+
+			.navigation__links {
+				flex-direction: row;
+				position: relative;
+				top: 0;
+				right: 0
+			}
+
+			.navigation__links .button_first {
+				margin-right: 0;
+				z-index: 2
+			}
+
+			.navigation__links .button_last {
+				margin: 0 0 -20px -30px;
+				padding-bottom: 25px
+			}
+
+			.navigation__links .button_last:active,
+			.navigation__links .button_last:focus,
+			.navigation__links .button_last:hover {
+				z-index: 3
+			}
+
+			.logo {
+				width: 90px;
+				margin-bottom: -60px
+			}
+		}
+
+		.breadcrumbs {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			margin: 10px 0;
+			align-items: center;
+			padding: 10px 15px 10px 0 !important
+		}
+
+		.breadcrumbs__item {
+			display: flex;
+			text-transform: uppercase;
+			line-height: 1;
+			align-items: center;
+			margin: 5px 0;
+			cursor: default;
+			color: #e9417d
+		}
+
+		.breadcrumbs__item:after {
+			content: '>';
+			margin: 0 10px;
+			color: #e9417d
+		}
+
+		.breadcrumbs__item:first-child .breadcrumbs__link {
+			text-decoration: underline
+		}
+
+		.breadcrumbs__item:last-child .breadcrumbs__link {
+			color: #ff0
+		}
+
+		.breadcrumbs__item:last-child::after {
+			display: none
+		}
+
+		.breadcrumbs__link {
+			display: flex;
+			text-decoration: none;
+			color: #e9417d
+		}
+
+		.breadcrumbs__link:hover {
+			color: #ff0
+		}
+
+		.carusel {
+			display: block;
+			width: 100%;
+			overflow: hidden
+		}
+
+		.carusel__container {
+			display: flex;
+			min-width: 100%;
+			position: relative;
+			height: 30vw;
+			min-height: 270px;
+			max-height: 420px
+		}
+
+		.carusel__list {
+			position: relative;
+			width: 100%;
+			height: 100%
+		}
+
+		.carusel__unit {
+			display: flex;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			opacity: 0;
+			transition: .3s
+		}
+
+		.carusel__picture {
+			position: relative;
+			width: 100%;
+			min-height: 100%;
+			height: 100%;
+			display: block
+		}
+
+		.carusel__indicator {
+			display: flex;
+			align-items: center;
+			height: 30px;
+			position: absolute;
+			bottom: 10px;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 2
+		}
+
+		.carusel__dots {
+			display: flex;
+			align-items: center
+		}
+
+		.carusel__dot {
+			display: block;
+			cursor: pointer;
+			width: 15px;
+			height: 15px;
+			background: 0 0;
+			border-radius: 50%;
+			margin: 5px;
+			background: 0 0;
+			border: 1px solid #e8ebed;
+			position: relative
+		}
+
+		.carusel__dot:after {
+			content: '';
+			width: 60%;
+			height: 60%;
+			border-radius: 50%;
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%)
+		}
+
+		.carusel__container[data-position="1"] .carusel__unit[data-position="1"] {
+			opacity: 1 !important
+		}
+
+		.carusel__container[data-position="1"] .carusel__dot[data-position="1"] {
+			border-color: #ff0
+		}
+
+		.carusel__container[data-position="1"] .carusel__dot[data-position="1"]:after {
+			background: #ff0
+		}
+
+		.carusel__container[data-position="2"] .carusel__unit[data-position="2"] {
+			opacity: 1 !important
+		}
+
+		.carusel__container[data-position="2"] .carusel__dot[data-position="2"] {
+			border-color: #ff0
+		}
+
+		.carusel__container[data-position="2"] .carusel__dot[data-position="2"]:after {
+			background: #ff0
+		}
+
+		.carusel__container[data-position="3"] .carusel__unit[data-position="3"] {
+			opacity: 1 !important
+		}
+
+		.carusel__container[data-position="3"] .carusel__dot[data-position="3"] {
+			border-color: #ff0
+		}
+
+		.carusel__container[data-position="3"] .carusel__dot[data-position="3"]:after {
+			background: #ff0
+		}
+
+		.carusel__container[data-position="4"] .carusel__unit[data-position="4"] {
+			opacity: 1 !important
+		}
+
+		.carusel__container[data-position="4"] .carusel__dot[data-position="4"] {
+			border-color: #ff0
+		}
+
+		.carusel__container[data-position="4"] .carusel__dot[data-position="4"]:after {
+			background: #ff0
+		}
+
+		.carusel__container[data-position="5"] .carusel__unit[data-position="5"] {
+			opacity: 1 !important
+		}
+
+		.carusel__container[data-position="5"] .carusel__dot[data-position="5"] {
+			border-color: #ff0
+		}
+
+		.carusel__container[data-position="5"] .carusel__dot[data-position="5"]:after {
+			background: #ff0
+		}
+
+		.carusel__container[data-position="6"] .carusel__unit[data-position="6"] {
+			opacity: 1 !important
+		}
+
+		.carusel__container[data-position="6"] .carusel__dot[data-position="6"] {
+			border-color: #ff0
+		}
+
+		.carusel__container[data-position="6"] .carusel__dot[data-position="6"]:after {
+			background: #ff0
+		}
+
+		@media (min-width:768px) {
+			.carusel__picture {
+				max-height: 260px
+			}
+
+			.carusel__content {
+				align-items: flex-start;
+				text-align: left;
+				justify-content: space-around;
+				padding: 10px 40px
+			}
+
+			.carusel__title {
+				max-width: 300px
+			}
+		}
+
+		.faq {
+			display: flex;
+			flex-direction: column
+		}
+
+		.faq a {
+			color: #e9417d
+		}
+
+		.faq a:hover {
+			text-decoration: underline
+		}
+
+		.faq__item {
+			display: flex;
+			flex-direction: column;
+			padding: 10px 15px
+		}
+
+		.faq__item:nth-child(2n+1) {
+			background: rgba(233, 65, 125, .05)
+		}
+
+		.faq__item[open] {
+			padding-bottom: 0
+		}
+
+		.faq__title {
+			font-weight: 400;
+			font-size: 2rem;
+			margin-bottom: 5px;
+			display: inline-flex;
+			align-items: center
+		}
+
+		.faq__title::before {
+			content: "+";
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			font-weight: 600;
+			color: #e9417d;
+			width: 10px;
+			height: 10px;
+			margin: 0;
+			font-size: 2.2rem
+		}
+
+		.faq__title:hover {
+			cursor: pointer
+		}
+
+		.faq__content {
+			padding: 5px 20px;
+			flex-direction: column
+		}
+
+		summary::-webkit-details-marker {
+			color: transparent
+		}
+
+		details[open] summary::before {
+			content: "-"
+		}
+
+		.categories {
+			padding: 20px 0 !important
+		}
+
+		.categories__list {
+			display: flex;
+			justify-content: center;
+			overflow-x: auto
+		}
+
+		.categories__item {
+			display: flex;
+			min-width: -webkit-max-content;
+			min-width: -moz-max-content;
+			min-width: max-content
+		}
+
+		.categories__link {
+			padding: 10px 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			color: #fff;
+			min-width: -webkit-max-content;
+			min-width: -moz-max-content;
+			min-width: max-content;
+			flex: 1 0 100%;
+			font-size: 1.6rem;
+			transition: .3s
+		}
+
+		.categories__link:hover {
+			color: #ff0
+		}
+
+		.categories__link:hover .categories__svg {
+			fill: #ff0
+		}
+
+		.categories__svg {
+			transition: .3s;
+			fill: #fff;
+			height: 30px;
+			width: 30px;
+			margin-bottom: 5px;
+			display: block
+		}
+
+		@media (min-width:992px) {
+			.catalog__link {
+				flex-direction: row
+			}
+
+			.catalog__svg {
+				margin-bottom: 0;
+				margin-right: 5px
+			}
+		}
+
+		.promo__list {
+			flex-wrap: wrap;
+			display: flex;
+			justify-content: space-around
+		}
+
+		.promo__item {
+			display: flex;
+			flex: 1 0 100%;
+			flex-direction: column;
+			align-items: center;
+			padding: 10px;
+			position: relative;
+			max-width: 340px;
+			transition: .5s
+		}
+
+		.promo__item:after {
+			position: absolute;
+			width: 95%;
+			height: 85%;
+			-webkit-clip-path: polygon(90% 93%, 3% 99%, 0 6%, 95% 0);
+			clip-path: polygon(90% 93%, 3% 99%, 0 6%, 95% 0);
+			top: 5%;
+			left: -3px;
+			content: "";
+			z-index: -1;
+			background: #8e58a3
+		}
+
+		.promo__item:before {
+			content: '';
+			display: block;
+			height: 1px;
+			position: absolute;
+			bottom: 10%;
+			right: 10%;
+			transform: rotate(-43deg);
+			width: 40px;
+			background: #e9417d;
+			transition: .5s
+		}
+
+		.promo__item .button_pure {
+			margin-top: -20px;
+			padding: 15px 35px;
+			-webkit-clip-path: polygon(95% 100%, 6% 94%, 1% 18%, 99% 17%);
+			clip-path: polygon(95% 100%, 6% 94%, 1% 18%, 99% 17%)
+		}
+
+		.promo__item .button_pure:hover {
+			transform: scale(1.1)
+		}
+
+		.promo__item:hover {
+			transform: translateY(-10px)
+		}
+
+		.promo__item:hover:before {
+			width: 55px;
+			transform: rotate(-10deg);
+			right: 0;
+			background: 0 0;
+			border: 1px dashed #ff0
+		}
+
+		.promo__item:hover .promo__dec-after {
+			opacity: 1
+		}
+
+		.promo__item:hover .promo__dec-after:after {
+			width: 50px;
+			border-color: #ff0;
+			top: 2%;
+			left: -15%
+		}
+
+		.promo__item:hover .promo__dec-after:before {
+			transform: scale(1);
+			background: #e9417d
+		}
+
+		.promo__item:hover .promo__dec-before {
+			opacity: 1
+		}
+
+		.promo__item:hover .promo__dec-before:before {
+			transform: translateX(-40%) rotate(-30deg)
+		}
+
+		.promo__item:hover .promo__dec-before:after {
+			bottom: 15px
+		}
+
+		.promo__dec-after {
+			position: absolute;
+			transition: .3s;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			z-index: -1
+		}
+
+		.promo__dec-after:after {
+			content: '';
+			display: block;
+			width: 25px;
+			transform: rotate(-40deg);
+			height: 2px;
+			border: 1px dashed #e9417d;
+			position: absolute;
+			top: 5%;
+			left: -5%;
+			transition: .5s
+		}
+
+		.promo__dec-after:before {
+			content: '';
+			display: block;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background: #ff0;
+			top: 10px;
+			left: 10px;
+			transform: scale(1.3);
+			transition: .5s
+		}
+
+		.promo__dec-before {
+			position: absolute;
+			transition: .3s;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			opacity: 0
+		}
+
+		.promo__dec-before:after {
+			position: absolute;
+			bottom: 0;
+			left: 30%;
+			content: '';
+			width: 90px;
+			transition: .5s;
+			height: 1px;
+			background: #ff0;
+			transform: translateX(-50%) rotate(15deg)
+		}
+
+		.promo__dec-before:before {
+			position: absolute;
+			bottom: 0;
+			left: 30%;
+			content: '';
+			transition: .5s;
+			width: 90px;
+			height: 1px;
+			border: 1px dashed #e9417d;
+			transform: translateX(-40%) rotate(-15deg)
+		}
+
+		.promo__picture {
+			width: 100%;
+			display: block;
+			height: 50vw;
+			max-height: 220px;
+			position: relative;
+			-webkit-clip-path: polygon(90% 93%, 3% 99%, 0 6%, 95% 0);
+			clip-path: polygon(90% 93%, 3% 99%, 0 6%, 95% 0);
+			z-index: 1
+		}
+
+		.promo__img {
+			z-index: 2
+		}
+
+		.turnaments {
+			margin-bottom: 20px
+		}
+
+		.turnaments .catalog {
+			width: 100%;
+			border: 1px dashed #ff0;
+			padding: 20px 20px 0
+		}
+
+		.turnaments__container {
+			display: flex;
+			flex-wrap: wrap
+		}
+
+		.turnaments__item {
+			display: flex;
+			flex-wrap: wrap;
+			flex: 1 0 100%
+		}
+
+		.turnaments__box {
+			display: flex;
+			flex: 1 0 100%;
+			flex-direction: column;
+			padding: 35px 0;
+			align-items: center
+		}
+
+		.turnaments__box .button_pure {
+			-webkit-clip-path: polygon(14% 19%, 88% 0, 93% 86%, 12% 92%);
+			clip-path: polygon(14% 19%, 88% 0, 93% 86%, 12% 92%);
+			padding: 15px 30px 20px 40px
+		}
+
+		.turnaments__box .button_pure:hover {
+			transform: scale(1.1);
+			background: #c71756
+		}
+
+		.turnaments__description {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			padding: 35px 0;
+			margin-bottom: 20px;
+			position: relative;
+			justify-content: space-around;
+			min-height: 220px;
+			min-width: 280px;
+			transition: .3s
+		}
+
+		.turnaments__description:after {
+			transition: .3s;
+			content: '';
+			display: block;
+			width: 130%;
+			height: 110%;
+			min-width: 300px;
+			background: #e9417d;
+			-webkit-clip-path: polygon(4% 12%, 100% 5%, 90% 99%, 10% 92%);
+			clip-path: polygon(4% 12%, 100% 5%, 90% 99%, 10% 92%);
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			z-index: 0;
+			position: absolute
+		}
+
+		.turnaments__description:hover:after {
+			transform: translateY(-55%) translateX(-50%);
+			background: #c71756
+		}
+
+		.turnaments__title {
+			text-transform: uppercase;
+			color: #fff;
+			font-size: 1.8rem;
+			z-index: 1;
+			font-weight: 600;
+			font-style: italic
+		}
+
+		.turnaments__name {
+			text-transform: uppercase;
+			color: #fff;
+			font-size: 3rem;
+			z-index: 1;
+			font-weight: 700;
+			font-style: italic;
+			letter-spacing: 1px;
+			padding-bottom: 20px;
+			border-bottom: 1px solid #fff
+		}
+
+		.turnaments__date {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			z-index: 1;
+			padding: 10px 0
+		}
+
+		.turnaments__date_end,
+		.turnaments__date_start {
+			font-weight: 600;
+			display: flex;
+			text-align: center
+		}
+
+		.turnaments__icon {
+			width: 140px;
+			height: 140px;
+			display: flex;
+			background: #e9417d;
+			justify-content: center;
+			border-radius: 50%;
+			margin-bottom: 10px;
+			align-items: center
+		}
+
+		.turnaments__icon svg {
+			fill: #fff;
+			width: 90px;
+			height: 90px
+		}
+
+		.turnaments__prize__title {
+			text-transform: uppercase;
+			font-weight: 600;
+			margin-bottom: 10px;
+			font-style: italic;
+			font-size: 2.4rem;
+			list-style: .7
+		}
+
+		.turnaments__prize__curent {
+			letter-spacing: 1px;
+			font-weight: 700;
+			font-style: italic;
+			color: #e9417d;
+			font-size: 3rem
+		}
+
+		@media (min-width:576px) {
+			__description {
+				padding: 35px 40px
+			}
+		}
+
+		@media (min-width:768px) {
+			.turnaments__description {
+				padding: 60px 0
+			}
+
+			.turnaments__box {
+				flex: 1 0 50%;
+				max-width: 50%
+			}
+		}
+
+		@media (min-width:992px) {
+			.turnaments__name {
+				padding: 0 20px 20px;
+				font-size: 3rem
+			}
+
+			.turnaments__date {
+				font-size: 2rem
+			}
+		}
+
+		.catalog__list {
+			grid-template-columns: repeat(2, 1fr);
+			position: relative;
+			display: grid;
+			overflow: hidden;
+			width: 100%;
+			margin: auto;
+			grid-auto-columns: auto;
+			grid-gap: 20px
+		}
+
+		.catalog__list_search.active {
+			padding-bottom: 20px;
+			position: relative
+		}
+
+		.catalog__list_search.active:after {
+			content: '';
+			display: block;
+			border: 1px dashed #ff0;
+			position: absolute;
+			bottom: 2px;
+			left: 50%;
+			width: 100px;
+			transform: translateX(-50%);
+			z-index: 2
+		}
+
+		.catalog__list_search.active:before {
+			z-index: 1;
+			content: '';
+			display: block;
+			border: 1px solid #e9417d;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			width: 120px;
+			transform: translateX(-50%)
+		}
+
+		.catalog__item {
+			display: flex;
+			height: 30vw
+		}
+
+		.catalog__item_wrapper {
+			position: relative;
+			display: block;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			border: 1px solid transparent
+		}
+
+		.catalog__pct {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0
+		}
+
+		.catalog__hover {
+			display: block;
+			position: relative;
+			z-index: 2;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: rgba(0, 0, 0, .3);
+			opacity: 0;
+			transition: .3s
+		}
+
+		.catalog__hover:after,
+		.catalog__hover:before {
+			content: '';
+			width: 0;
+			transition: .5s;
+			height: 0;
+			display: block;
+			position: absolute
+		}
+
+		.catalog__hover:after {
+			bottom: 0;
+			left: 0;
+			border-bottom: 1px solid #ff0;
+			border-left: 1px solid #ff0
+		}
+
+		.catalog__hover:before {
+			top: 0;
+			right: 0;
+			border-top: 1px solid #ffe029;
+			border-right: 1px solid #ffe029
+		}
+
+		.catalog__hover:hover {
+			opacity: 1
+		}
+
+		.catalog__hover:hover:after,
+		.catalog__hover:hover:before {
+			width: 100%;
+			height: 100%
+		}
+
+		.catalog__hover:hover .catalog__title {
+			top: 5%
+		}
+
+		.catalog__hover:hover .catalog__circle {
+			transform: scale(1)
+		}
+
+		.catalog__title {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			width: 100%;
+			text-align: center;
+			transform: translateX(-50%);
+			text-shadow: 0 0 5px rgba(0, 0, 0, .4);
+			text-transform: uppercase;
+			font-size: 1.2rem;
+			transition: .5s;
+			font-weight: 700;
+			z-index: 3
+		}
+
+		.catalog__title:hover {
+			color: #ff0
+		}
+
+		.catalog__circle {
+			display: block;
+			width: 40px;
+			height: 40px;
+			background: #ff0;
+			border-radius: 50%;
+			position: relative;
+			transition: .3s;
+			z-index: 3;
+			transform: scale(.9)
+		}
+
+		.catalog__circle:after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 27px;
+			left: 27px;
+			transform: translateX(-50%) translateY(-50%);
+			width: 0;
+			height: 0;
+			margin-top: -8px;
+			margin-left: -4px;
+			border-left-color: #e9417d;
+			border-width: 8px 0 8px 14px;
+			border-style: solid
+		}
+
+		.catalog__circle:hover {
+			transform: scale(1.05) !important
+		}
+
+		.catalog__none {
+			color: #e9417d;
+			max-width: -webkit-max-content;
+			max-width: -moz-max-content;
+			max-width: max-content;
+			margin-bottom: 10px;
+			text-transform: uppercase;
+			border-bottom: 1px dashed #e9417d
+		}
+
+		.catalog-promo-1 {
+			grid-row: 2;
+			grid-column: 1/3
+		}
+
+		.catalog-promo-2 {
+			grid-row: 5;
+			grid-column: 1/3
+		}
+
+		.catalog-promo-3 {
+			grid-row: 8;
+			grid-column: 1/3
+		}
+
+		.catalog-promo-4 {
+			grid-row: 15;
+			grid-column: 1/3
+		}
+
+		.catalog-promo-5 {
+			grid-row: 18;
+			grid-column: 1/3
+		}
+
+		.catalog-promo__wrapper {
+			width: 100%;
+			display: flex;
+			height: 100%;
+			justify-content: center;
+			align-items: center;
+			position: relative
+		}
+
+		.catalog-promo__picture {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			width: 100%;
+			height: 100%;
+			max-width: 100%;
+			max-height: 100%;
+			overflow: hidden
+		}
+
+		.catalog-promo__img {
+			display: block;
+			max-height: 90%;
+			max-width: 90%
+		}
+
+		.catalog-promo__link {
+			position: absolute;
+			bottom: -20px;
+			left: 50%;
+			transform: translateX(-50%);
+			padding: 15px 25px 15px 35px;
+			color: #fff;
+			-webkit-clip-path: polygon(8.6% 0, 94.7% 0, 92% 100%, 13% 93%);
+			clip-path: polygon(8.6% 0, 94.7% 0, 92% 100%, 13% 93%)
+		}
+
+		.catalog-promo__link:hover {
+			transform: scale(1.05) translateX(-50%)
+		}
+
+		.catalog__all {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 20px 0
+		}
+
+		.catalog__all_bg {
+			background: url(img/load-more.webp);
+			background-size: contain;
+			width: 78px;
+			background-position: 50%;
+			background-repeat: no-repeat;
+			height: 45px;
+			margin-bottom: 10px
+		}
+
+		.form {
+			display: flex;
+			flex-direction: column;
+			padding: 10px 0;
+			margin-bottom: 10px
+		}
+
+		.form__box {
+			display: flex;
+			max-width: -webkit-max-content;
+			max-width: -moz-max-content;
+			max-width: max-content
+		}
+
+		.form input {
+			padding: 8px 10px
+		}
+
+		.form .input {
+			border: 1px solid #424242;
+			color: #424242;
+			background: #2c2c2c
+		}
+
+		.form .input:active,
+		.form .input:focus,
+		.form .input:hover {
+			color: #e8ebed
+		}
+
+		.search__catalog__line {
+			height: 40px
+		}
+
+		.search__catalog_btn {
+			pointer-events: none;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 40px;
+			min-width: 40px;
+			min-height: 100%
+		}
+
+		.search__catalog_svg {
+			width: 15px;
+			fill: #fff;
+			height: 15px
+		}
+
+		.search__catalog_svg:active,
+		.search__catalog_svg:focus,
+		.search__catalog_svg:hover {
+			fill: #ff0
+		}
+
+		@media (min-width:576px) {
+			.catalog__list {
+				grid-template-columns: repeat(3, 1fr)
+			}
+
+			.catalog__item {
+				height: 18vw
+			}
+
+			.catalog__circle {
+				width: 50px;
+				height: 50px
+			}
+
+			.catalog__circle:after {
+				top: 33px;
+				left: 32px
+			}
+
+			.catalog-promo-1 {
+				grid-row: 1/2;
+				grid-column: 2/4
+			}
+
+			.catalog-promo-2 {
+				grid-row: 7;
+				grid-column: 2/4
+			}
+
+			.catalog-promo-3 {
+				grid-row: 7;
+				grid-column: 2/4
+			}
+
+			.catalog-promo-4 {
+				grid-row: 11;
+				grid-column: 2/4
+			}
+
+			.catalog-promo-5 {
+				grid-row: 14;
+				grid-column: 1/3
+			}
+
+			.catalog-promo__link {
+				bottom: -5px
+			}
+		}
+
+		@media (min-width:768px) {
+			.catalog__list {
+				grid-template-columns: repeat(4, 1fr)
+			}
+
+			.catalog__item {
+				height: 13vw
+			}
+
+			.catalog-promo-1 {
+				grid-row: 1/3;
+				grid-column: 3/5
+			}
+
+			.catalog-promo-2 {
+				grid-row: 5/7;
+				grid-column: 1/3
+			}
+
+			.catalog-promo-3 {
+				grid-row: 9/11;
+				grid-column: 3/5
+			}
+
+			.catalog-promo-4 {
+				grid-row: 13/15;
+				grid-column: 1/3
+			}
+
+			.catalog-promo-5 {
+				grid-row: 15/17;
+				grid-column: 3/5
+			}
+		}
+
+		@media (min-width:992px) {
+			.catalog__list {
+				grid-template-columns: repeat(5, 1fr)
+			}
+
+			.catalog__item {
+				height: 10vw
+			}
+
+			.catalog__circle {
+				width: 35px;
+				height: 35px
+			}
+
+			.catalog__circle:after {
+				top: 25px;
+				left: 23px;
+				border-width: 6px 0 6px 10px
+			}
+
+			.catalog__circle:hover {
+				transform: scale(1.1) !important
+			}
+
+			.catalog-promo-1 {
+				grid-row: 1/3;
+				grid-column: 3/5
+			}
+
+			.catalog-promo-2 {
+				grid-row: 4/6;
+				grid-column: 1/3
+			}
+
+			.catalog-promo-3 {
+				grid-row: 7/9;
+				grid-column: 4/6
+			}
+
+			.catalog-promo-4 {
+				grid-row: 9/11;
+				grid-column: 2/4
+			}
+
+			.catalog-promo-5 {
+				grid-row: 11/13;
+				grid-column: 5/7
+			}
+		}
+
+		@media (min-width:1200px) {
+			.catalog__list {
+				grid-template-columns: repeat(6, 1fr)
+			}
+
+			.catalog__item {
+				max-height: 135px
+			}
+		}
+
+		.game__container {
+			display: flex;
+			flex-direction: column
+		}
+
+		.game__container .game__buttons {
+			text-align: center
+		}
+
+		.game__title {
+			margin-bottom: 20px
+		}
+
+		.game__wrapper {
+			margin-bottom: 10px
+		}
+
+		.game__wrapper-info {
+			width: auto;
+			display: inline-block;
+			margin-top: 30px;
+			border: 1px solid #2a707d;
+			padding: 15px 30px
+		}
+
+		.game__wrapper-info-title {
+			margin-bottom: 15px;
+			font-size: 20px
+		}
+
+		.game__wrapper-info ul {
+			list-style: none
+		}
+
+		.game__wrapper-info ul li {
+			padding-left: 20px;
+			position: relative;
+			color: rgba(255, 255, 255, .7)
+		}
+
+		.game__wrapper-info ul li:before {
+			background: #ff0;
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%) rotate(45deg);
+			width: 5px;
+			height: 5px
+		}
+
+		.game__wrapper .flash-box,
+		.game__wrapper .game__iframe,
+		.game__wrapper iframe {
+			display: block;
+			width: 100%;
+			max-width: 100%;
+			height: 50vw;
+			max-height: 650px
+		}
+
+		.game__wrapper div[id] {
+			width: 100%
+		}
+
+		.footer {
+			background: url(img/bg-footer.svg), linear-gradient(180deg, #2a707d, #222c2e);
+			background-size: contain;
+			padding: 40px 0 0;
+			background-position: 50%;
+			background-repeat: no-repeat
+		}
+
+		.footer__container {
+			display: flex;
+			flex-direction: column
+		}
+
+		.footer__wrapper {
+			display: flex;
+			flex-wrap: wrap
+		}
+
+		.footer__aside {
+			display: flex;
+			flex: 1 0 100%
+		}
+
+		.footer__main {
+			display: flex;
+			flex: 1 0 100%;
+			flex-direction: column
+		}
+
+		.footer-navigation {
+			display: flex;
+			flex-direction: column
+		}
+
+		.footer-navigation ul {
+			list-style: none;
+			display: flex;
+			flex-direction: column
+		}
+
+		.footer-navigation ul ul {
+			padding-left: 15px
+		}
+
+		.footer-navigation ul li {
+			font-weight: 700;
+			letter-spacing: 1px;
+			color: #a0a1a4;
+			text-transform: uppercase
+		}
+
+		.footer-navigation ul li a {
+			display: flex;
+			color: #fff;
+			text-decoration: underline;
+			padding: 7px 0;
+			font-size: 14px;
+			text-transform: none
+		}
+
+		.footer-navigation ul li a:hover {
+			color: #ff0
+		}
+
+		.copyright {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			padding: 30px 0
+		}
+
+		.payments__title {
+			color: #a0a1a4
+		}
+
+		.payments__item {
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center
+		}
+
+		.payments__item-wrapper {
+			width: 100px;
+			height: 80px;
+			display: flex;
+			justify-content: center;
+			align-items: center
+		}
+
+		.partners,
+		.payments {
+			display: flex;
+			padding: 10px 0;
+			flex-wrap: wrap;
+			justify-content: space-around
+		}
+
+		.partners_icon,
+		.payments_icon {
+			background: image-set(url("img/more/sprite.png") 1x, url("img/more/sprite.png") 2x) 0 0/542px;
+			background: url(img/sprite.png);
+			display: block;
+			height: 20px
+		}
+
+		.partners_icon-visa,
+		.payments_icon-visa {
+			background-position: -494px -203px;
+			width: 31px
+		}
+
+		.partners_icon-maestro,
+		.partners_icon-visa,
+		.payments_icon-maestro,
+		.payments_icon-visa {
+			height: 30px
+		}
+
+		.partners_icon-maestro,
+		.payments_icon-maestro {
+			background-position: -267px -174px;
+			width: 50px
+		}
+
+		.partners_icon-qiwi,
+		.payments_icon-qiwi {
+			background-position: -494px -273px
+		}
+
+		.partners_icon-qiwi,
+		.partners_icon-webmoney,
+		.payments_icon-qiwi,
+		.payments_icon-webmoney {
+			width: 30px;
+			height: 30px
+		}
+
+		.partners_icon-webmoney,
+		.payments_icon-webmoney {
+			background-position: -494px -303px
+		}
+
+		.partners_icon-yandex,
+		.payments_icon-yandex {
+			background-position: -517px -233px;
+			width: 25px;
+			height: 30px
+		}
+
+		.partners_icon-skrill,
+		.payments_icon-skrill {
+			background-position: -224px -150px;
+			width: 58px
+		}
+
+		.partners_icon-neteller,
+		.partners_icon-skrill,
+		.payments_icon-neteller,
+		.payments_icon-skrill {
+			height: 20px
+		}
+
+		.partners_icon-neteller,
+		.payments_icon-neteller {
+			background-position: -137px -342px;
+			width: 122px
+		}
+
+		.partners_icon-quickfire,
+		.payments_icon-quickfire {
+			background-position: -258px -242px;
+			width: 75px
+		}
+
+		.partners_icon-netent,
+		.partners_icon-quickfire,
+		.payments_icon-netent,
+		.payments_icon-quickfire {
+			height: 30px
+		}
+
+		.partners_icon-netent,
+		.payments_icon-netent {
+			background-position: -53px -342px;
+			width: 84px
+		}
+
+		.partners_icon-yggdrasil,
+		.payments_icon-yggdrasil {
+			background-position: -118px -174px;
+			width: 149px
+		}
+
+		.partners_icon-quickspin,
+		.partners_icon-yggdrasil,
+		.payments_icon-quickspin,
+		.payments_icon-yggdrasil {
+			height: 30px
+		}
+
+		.partners_icon-quickspin,
+		.payments_icon-quickspin {
+			background-position: -333px 0;
+			width: 124px
+		}
+
+		.partners_icon-pushgaming,
+		.payments_icon-pushgaming {
+			background-position: -100px -30px;
+			width: 156px;
+			height: 41px
+		}
+
+		.partners_icon-elk,
+		.payments_icon-elk {
+			background-position: -126px -395px;
+			width: 77px
+		}
+
+		.partners_icon-elk,
+		.partners_icon-thunderkick,
+		.payments_icon-elk,
+		.payments_icon-thunderkick {
+			height: 30px
+		}
+
+		.partners_icon-thunderkick,
+		.payments_icon-thunderkick {
+			background-position: -97px -312px;
+			width: 95px
+		}
+
+		.partners_icon-playngo,
+		.payments_icon-playngo {
+			background-position: -333px -220px;
+			width: 108px
+		}
+
+		.partners_icon-amatic,
+		.partners_icon-playngo,
+		.payments_icon-amatic,
+		.payments_icon-playngo {
+			height: 30px
+		}
+
+		.partners_icon-amatic,
+		.payments_icon-amatic {
+			background-position: -333px -250px;
+			width: 99px
+		}
+
+		.partners_icon-bigtimegaming,
+		.payments_icon-bigtimegaming {
+			background-position: -333px -63px;
+			width: 118px
+		}
+
+		.partners_icon-bigtimegaming,
+		.partners_icon-relax,
+		.payments_icon-bigtimegaming,
+		.payments_icon-relax {
+			height: 30px
+		}
+
+		.partners_icon-relax,
+		.payments_icon-relax {
+			background-position: 0 -312px;
+			width: 97px
+		}
+
+		.partners_icon-spinomenal,
+		.payments_icon-spinomenal {
+			background-position: -104px -127px;
+			width: 196px;
+			height: 23px
+		}
+
+		.partners_icon-belatra,
+		.payments_icon-belatra {
+			background-position: -333px -280px
+		}
+
+		.partners_icon-belatra,
+		.partners_icon-betsoft,
+		.payments_icon-belatra,
+		.payments_icon-betsoft {
+			width: 99px;
+			height: 30px
+		}
+
+		.partners_icon-betsoft,
+		.payments_icon-betsoft {
+			background-position: -221px -272px
+		}
+
+		.partners_icon-bfgames,
+		.payments_icon-bfgames {
+			background-position: -494px -173px;
+			width: 39px
+		}
+
+		.partners_icon-bfgames,
+		.partners_icon-nolimitcity,
+		.payments_icon-bfgames,
+		.payments_icon-nolimitcity {
+			height: 30px
+		}
+
+		.partners_icon-nolimitcity,
+		.payments_icon-nolimitcity {
+			background-position: -333px -93px;
+			width: 112px
+		}
+
+		.partners_icon-endorphina,
+		.payments_icon-endorphina {
+			background-position: 0 -127px;
+			width: 104px;
+			height: 47px
+		}
+
+		.partners_icon-habanero,
+		.payments_icon-habanero {
+			background-position: -147px -212px;
+			width: 146px
+		}
+
+		.partners_icon-booongo,
+		.partners_icon-habanero,
+		.payments_icon-booongo,
+		.payments_icon-habanero {
+			height: 30px
+		}
+
+		.partners_icon-booongo,
+		.payments_icon-booongo {
+			background-position: -97px -272px;
+			width: 124px
+		}
+
+		.partners_icon-blueprint,
+		.payments_icon-blueprint {
+			background-position: -130px -242px;
+			width: 128px
+		}
+
+		.partners_icon-blueprint,
+		.partners_icon-evolutiongaming,
+		.payments_icon-blueprint,
+		.payments_icon-evolutiongaming {
+			height: 30px
+		}
+
+		.partners_icon-evolutiongaming,
+		.payments_icon-evolutiongaming {
+			background-position: -100px 0;
+			width: 233px
+		}
+
+		.partners_icon-redtiger,
+		.payments_icon-redtiger {
+			background-position: -135px -85px;
+			width: 158px;
+			height: 30px
+		}
+
+		.partners_icon-tomhorn,
+		.payments_icon-tomhorn {
+			background-position: 0 -85px;
+			width: 135px;
+			height: 42px
+		}
+
+		.partners_icon-comodo_secure,
+		.payments_icon-comodo_secure {
+			background-position: 0 0;
+			width: 100px;
+			height: 85px
+		}
+
+		.partners_icon-18,
+		.payments_icon-18 {
+			background-position: 0 -342px;
+			width: 53px;
+			height: 53px
+		}
+
+		.partners_icon-playson,
+		.payments_icon-playson {
+			background-position: 0 -212px;
+			width: 147px;
+			height: 30px
+		}
+
+		.partners_icon-pragmatic,
+		.payments_icon-pragmatic {
+			background-position: -256px -30px;
+			width: 77px;
+			height: 35px
+		}
+
+		.partners_icon-1x2Gaming,
+		.payments_icon-1x2Gaming {
+			background-position: 0 -272px;
+			width: 97px;
+			height: 40px
+		}
+
+		.partners_icon-2by2Gaming,
+		.payments_icon-2by2Gaming {
+			background-position: -333px -123px
+		}
+
+		.partners_icon-2by2Gaming,
+		.partners_icon-ainsworth,
+		.payments_icon-2by2Gaming,
+		.payments_icon-ainsworth {
+			width: 111px;
+			height: 30px
+		}
+
+		.partners_icon-ainsworth,
+		.payments_icon-ainsworth {
+			background-position: -333px -153px
+		}
+
+		.partners_icon-wazdan,
+		.payments_icon-wazdan {
+			background-position: -280px -312px;
+			width: 150px;
+			height: 17px
+		}
+
+		.partners_icon-booming-games,
+		.payments_icon-booming-games {
+			background-position: -192px -312px;
+			width: 88px;
+			height: 30px
+		}
+
+		.partners_icon-ganapati,
+		.payments_icon-ganapati {
+			background-position: 0 -174px;
+			width: 118px;
+			height: 38px
+		}
+
+		.partners_icon-genesis,
+		.payments_icon-genesis {
+			background-position: 0 -242px;
+			width: 130px;
+			height: 30px
+		}
+
+		.partners_icon-irondog,
+		.payments_icon-irondog {
+			background-position: -104px -150px;
+			width: 120px;
+			height: 23px
+		}
+
+		.partners_icon-justforwin,
+		.payments_icon-justforwin {
+			background-position: -333px -183px;
+			width: 90px;
+			height: 37px
+		}
+
+		.partners_icon-rabcat,
+		.payments_icon-rabcat {
+			background-position: -333px -30px;
+			width: 110px;
+			height: 33px
+		}
+
+		.partners_icon-interac-etransfer,
+		.payments_icon-interac-etransfer {
+			background-position: -42px -395px
+		}
+
+		.partners_icon-interac-etransfer,
+		.partners_icon-interac-online,
+		.payments_icon-interac-etransfer,
+		.payments_icon-interac-online {
+			width: 42px;
+			height: 56px
+		}
+
+		.partners_icon-interac-online,
+		.payments_icon-interac-online {
+			background-position: -84px -395px
+		}
+
+		.partners_icon-express-connect,
+		.payments_icon-express-connect {
+			background-position: 0 -395px;
+			width: 42px;
+			height: 56px
+		}
+
+		.partners__item {
+			margin: 10px;
+			display: flex;
+			height: 30px;
+			justify-content: center;
+			align-items: center;
+			width: -webkit-max-content;
+			width: -moz-max-content;
+			width: max-content
+		}
+
+		@media (min-width:768px) {
+			.footer__wrapper {
+				flex-wrap: nowrap
+			}
+
+			.footer__main {
+				flex: 1 0 70%
+			}
+
+			.footer__aside {
+				flex: 1 0 30%
+			}
+		}
+
+		.banner {
+			position: relative
+		}
+
+		.banner .banner__slider-pagination-wrap {
+			position: absolute;
+			bottom: 10px;
+			left: 0;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 10
+		}
+
+		.banner .swiper-pagination-bullet {
+			background: 0 0;
+			position: relative;
+			width: 15px;
+			height: 15px;
+			border: 1px solid #e8ebed
+		}
+
+		.banner .swiper-pagination-bullet:after {
+			background: 0 0;
+			content: "";
+			width: 60%;
+			height: 60%;
+			position: absolute;
+			border-radius: 50%;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%)
+		}
+
+		.banner .swiper-pagination-bullet:not(:last-child) {
+			margin-right: 15px
+		}
+
+		.banner .swiper-pagination-bullet-active {
+			border-color: #ff0
+		}
+
+		.banner .swiper-pagination-bullet-active:after {
+			background: #ff0
+		}
+
+		#wpadminbar+#page .header {
+			top: 32px
+		}
+
+		.site {
+			padding-top: 130px
+		}
+
+		.page-404 {
+			text-align: center
+		}
+
+		.page-404 .btn {
+			margin-bottom: 50px
+		}
+
+		.page-404-content {
+			width: 100%;
+			padding: 75px;
+			text-align: center;
+			text-transform: uppercase;
+			color: #e9407d
+		}
+
+		.page-404-content .page-404__btn {
+			margin: 30px auto;
+			display: inline-block
+		}
+
+		@media (max-width:768px) {
+			.page-404-content {
+				margin-bottom: 45px;
+				padding: 45px
+			}
+		}
+
+		.page-404__title {
+			text-transform: capitalize;
+			font-size: 30px;
+			line-height: 36px
+		}
+
+		@media (max-width:767px) {
+			.page-404__title {
+				font-size: 17px;
+				line-height: 19px
+			}
+		}
+
+		.page-404__subtitle {
+			font-size: 120px;
+			font-weight: 700;
+			line-height: 120px
+		}
+
+		@media (max-width:767px) {
+			.page-404__subtitle {
+				font-size: 70px;
+				line-height: 70px
+			}
+		}
+
+		.page-404__info {
+			font-size: 50px;
+			line-height: 60px
+		}
+
+		@media (max-width:767px) {
+			.page-404__info {
+				font-size: 30px;
+				line-height: 40px
+			}
+		}
+
+		.page-404 .particles-container {
+			position: absolute;
+			z-index: -1;
+			width: 100vw;
+			height: 100vh
+		}
+
+		.btn {
+			padding: 10px 20px;
+			border: 1px solid #ff0;
+			margin: 10px auto;
+			display: inline-block;
+			transition: all .2s ease
+		}
+
+		.btn:hover {
+			background: #ff0;
+			color: #e9417d
+		}
+
+		.toc-container {
+			border: 1px solid #aaa;
+			border-radius: 10px;
+			display: table;
+			padding: 1em 2em;
+			margin: 0 0 0.9em 0.5em;
+		}
+
+		.toc-container li {
+			margin: 0 0 .6em 0;
+			list-style-type: none;
+		}
+
+		/*  */
+		.lazy-hidden,
+		.entry img.lazy-hidden,
+		img.thumbnail.lazy-hidden {
+			background-color: #ffffff;
+			background-image: url('img/loading.gif');
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+		}
+
+		figure.wp-block-image img.lazy-hidden {
+			min-width: 150px;
+		}
+
+		picture source[type="image/webp"] {
+			display: block;
+		}
+
+		/*  */
+		.clear {
+			clear: both
+		}
+
+		.nobr {
+			white-space: nowrap
+		}
+
+		.lazy-hidden,
+		.entry img.lazy-hidden,
+		img.thumbnail.lazy-hidden {
+			background-color: #fff
+		}
+	</style>
+	<style amp-boilerplate>
+		body {
+			-webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+			-moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+			-ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+			animation: -amp-start 8s steps(1, end) 0s 1 normal both
+		}
+
+		@-webkit-keyframes -amp-start {
+			from {
+				visibility: hidden
+			}
+
+			to {
+				visibility: visible
+			}
+		}
+
+		@-moz-keyframes -amp-start {
+			from {
+				visibility: hidden
+			}
+
+			to {
+				visibility: visible
+			}
+		}
+
+		@-ms-keyframes -amp-start {
+			from {
+				visibility: hidden
+			}
+
+			to {
+				visibility: visible
+			}
+		}
+
+		@-o-keyframes -amp-start {
+			from {
+				visibility: hidden
+			}
+
+			to {
+				visibility: visible
+			}
+		}
+
+		@keyframes -amp-start {
+			from {
+				visibility: hidden
+			}
+
+			to {
+				visibility: visible
+			}
+		}
+	</style>
+	<noscript>
+		<style amp-boilerplate>
+			body {
+				-webkit-animation: none;
+				-moz-animation: none;
+				-ms-animation: none;
+				animation: none
+			}
+		</style>
+	</noscript>
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+</head>
+
+<body class="home page-template page-template-home page-template-home-php page page-id-13 no-sidebar">
+	<div id="page" class="site">
+		<header class="header">
+			<div class="container header__container">
+				<nav class="navigation">
+					<a href="" class="logo" aria-label="Booi Home">
+						<img src="img/logo.svg" alt="">
+					</a>
+					<div class="navigation__container">
+						<ul id="header-menu" class="navigation__list">
+							<li id="menu-item-389"
+								class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-389 navigation__item">
+								<a href="" aria-current="page" class="navigation__link">Главная</a>
+							</li>
+							<li id="menu-item-49"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49 navigation__item"><a
+									href="" class="navigation__link">Зеркало</a>
+							</li>
+							<li id="menu-item-47"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47 navigation__item"><a
+									href="" class="navigation__link">Бонусы</a></li>
+							<li id="menu-item-50"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50 navigation__item"><a
+									href="" class="navigation__link">Кэшбэк</a></li>
+							<li id="menu-item-54"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54 navigation__item"><a
+									href="" class="navigation__link">Регистрация</a></li>
+							<li id="menu-item-365"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-365 navigation__item"><a
+									href="" class="navigation__link">Демо</a></li>
+						</ul>
+					</div>
+				</nav>
+				<div class="navigation__links">
+					<a href="" class="button_yellow button_first button_md button_anim">Регистрация</a>
+					<a href="" class="button_pure button_last button_md button_anim">Войти</a>
+				</div>
+				<div class="button__menu t_hidden">
+					<span class="button__menu-line"></span>
+				</div>
+			</div>
+		</header>
+		<div class="banner">
+			<div class="banner__container">
+				<div class="banner__slider-wrapper">
+					<div class="swiper-container banner__slider">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide banner__slider-item">
+								<a href="">
+									<img src="img/the-magnificent-seven.jpeg" alt="">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="banner__slider-pagination-wrap">
+						<div class="banner__slider-pagination"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="content content__title">
+				<h1 class="main__title">Официальный сайт Booi казино</h1>
+			</div>
+			<div class="categories">
+
+				<ul class="categories__list">
+				</ul>
+			</div>
+
+
+			<div class="catalog" id="games">
+				<form aria-label="Search form" class="form" role="search">
+					<div class="form__box input">
+						<label class="lable__box">
+							<span class="hidden">Поиск</span>
+							<input v-model="localFilter.search" type="text" aria-label="Search input" class="search__catalog_line"
+								placeholder="Поиск">
+						</label>
+						<button class="search__catalog_btn" aria-label="search button">
+							<svg xmlns="http:img/www.w3.org/2000/svg" viewBox="0 0 17 17" class="search__catalog_svg">
+								<path
+									d="M9.819 5.43A4.374 4.374 0 005.44 1.05a4.379 4.379 0 104.379 4.38zM5.44 10.874a5.445 5.445 0 110-10.891 5.445 5.445 0 010 10.89zm3.063-1.618l.754-.754 1.472 1.472-.754.754-1.472-1.472zm.754-.754l1.472 1.472-.754.754-1.472-1.472.754-.754z">
+								</path>
+								<path
+									d="M14.284 14.996l.72-.72-3.911-3.91-.72.72 3.911 3.91zm-3.191-6.14l5.42 5.419-2.228 2.23-5.42-5.42 2.228-2.228z">
+								</path>
+							</svg>
+						</button>
+					</div>
+				</form>
+				<ul class="catalog__list">
+					<li class="catalog__item">
+						<div class="catalog__item_wrapper">
+							<picture class="catalog__pct">
+								<img src="img/epicapi.jpg" alt="" class="img_absolute catalog__img">
+							</picture>
+							<div class="catalog__hover">
+								<a href="" class="catalog__title">Онлайн слот Epic
+									Ape</a> <a href="" class="catalog__circle"></a>
+							</div>
+						</div>
+					</li>
+					<li class="catalog__item">
+						<div class="catalog__item_wrapper">
+							<picture class="catalog__pct">
+								<img src="img/swetbon.jpg" alt="" class="img_absolute catalog__img">
+							</picture>
+							<div class="catalog__hover">
+								<a href="" class="catalog__title">Игровой
+									аппарат Sweet Bonanza</a> <a href="" class="catalog__circle"></a>
+							</div>
+						</div>
+					</li>
+					<li class="catalog__item">
+						<div class="catalog__item_wrapper">
+							<picture class="catalog__pct">
+								<img src="img/zeusopt.jpg" alt="" class="img_absolute catalog__img">
+							</picture>
+							<div class="catalog__hover">
+								<a href="" class="catalog__title">Zeus Rush
+									Fever онлайн слот</a> <a href="" class="catalog__circle"></a>
+							</div>
+						</div>
+					</li>
+					<li class="catalog__item">
+						<div class="catalog__item_wrapper">
+							<picture class="catalog__pct">
+								<img src="img/athena.jpg" alt="" class="img_absolute catalog__img">
+							</picture>
+							<div class="catalog__hover">
+								<a href="" class="catalog__title">Игровой
+									автомат Athena's Glory</a> <a href="" class="catalog__circle"></a>
+							</div>
+						</div>
+					</li>
+					<li class="catalog__item">
+						<div class="catalog__item_wrapper">
+							<picture class="catalog__pct">
+								<img src="img/bufwild.jpg" alt="" class="img_absolute catalog__img">
+							</picture>
+							<div class="catalog__hover">
+								<a href="" class="catalog__title">Игровой
+									слот Big Wild Buffalo</a> <a href="" class="catalog__circle"></a>
+							</div>
+						</div>
+					</li>
+					<li class="catalog__item">
+						<div class="catalog__item_wrapper">
+							<picture class="catalog__pct">
+								<img src="img/jandv.jpg" alt="" class="img_absolute catalog__img">
+							</picture>
+							<div class="catalog__hover">
+								<a href="" class="catalog__title">Игровой аппарат Jack And The Beanstalk</a> <a href=""
+									class="catalog__circle"></a>
+							</div>
+						</div>
+					</li>
+					<li class="catalog__item">
+						<div class="catalog__item_wrapper">
+							<picture class="catalog__pct">
+								<img src="img/immrom.jpg" alt="" class="img_absolute catalog__img">
+							</picture>
+							<div class="catalog__hover">
+								<a href="" class="catalog__title">Игровой
+									автомат Immortal Romance</a> <a href="" class="catalog__circle"></a>
+							</div>
+						</div>
+					</li>
+					<li class="catalog__item">
+						<div class="catalog__item_wrapper">
+							<picture class="catalog__pct">
+								<img src="img/7RhtjiyDhjHY.jpeg" alt="" class="img_absolute catalog__img">
+							</picture>
+							<div class="catalog__hover">
+								<a href="" class="catalog__title">Игровой автомат
+									888 Dragons (888 Драконы)</a> <a href="" class="catalog__circle"></a>
+							</div>
+						</div>
+					</li>
+					<li class="catalog__item">
+						<div class="catalog__item_wrapper">
+							<picture class="catalog__pct">
+								<img src="img/SjqPFGizKKNg.jpeg" alt="" class="img_absolute catalog__img">
+							</picture>
+							<div class="catalog__hover">
+								<a href="" class="catalog__title">Игровой автомат
+									Zoom</a> <a href="" class="catalog__circle"></a>
+							</div>
+						</div>
+					</li>
+					<li class="catalog__item">
+						<div class="catalog__item_wrapper">
+							<picture class="catalog__pct">
+								<img src="img/3ljaknUcZJGm.jpeg" alt="" class="img_absolute catalog__img">
+							</picture>
+							<div class="catalog__hover">
+								<a href="" class="catalog__title">Admiral Nelson - игровой автомат Amatic</a> <a href=""
+									class="catalog__circle"></a>
+							</div>
+						</div>
+					</li>
+					<li class="catalog__item">
+						<div class="catalog__item_wrapper">
+							<picture class="catalog__pct">
+								<img src="img/2millionbc.jpeg" alt="" class="img_absolute catalog__img">
+							</picture>
+							<div class="catalog__hover">
+								<a href="" class="catalog__title">Игровой
+									автомат 2 Million B.C.</a> <a href="" class="catalog__circle"></a>
+							</div>
+						</div>
+					</li>
+					<li class="catalog__item">
+						<div class="catalog__item_wrapper">
+							<picture class="catalog__pct">
+								<img src="img/arcader-1.jpeg" alt="" class="img_absolute catalog__img">
+							</picture>
+							<div class="catalog__hover">
+								<a href="" class="catalog__title">Игровой автомат
+									Arcader</a> <a href="" class="catalog__circle"></a>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="catalog__all">
+					<div class="catalog__all_bg"></div>
+					<a href="" class="button-line button-line_pure">Посмотреть все</a>
+				</div>
+			</div>
+
+
+			<div class="content">
+
+				<div class="toc-container">
+					<ol>
+						<li><a href="">Регистрация</a></li>
+						<li><a href="">Приветственные бонусы</a></li>
+						<li><a href="">Индивидуальные предложения</a></li>
+						<li><a href="">Бонусы за статусы</a></li>
+						<li><a href="">Бонусы в честь Дня Рождения</a></li>
+						<li><a href="">Кэшбэк</a></li>
+						<li><a href="">Игры и программное обеспечение</a></li>
+						<li><a href="">Турниры</a></li>
+						<li><a href="">Ввод и вывод средств</a></li>
+						<li><a href="">Мобильная версия</a></li>
+						<li><a href="">Техподдержка</a></li>
+						<li><a href="">FAQ</a></li>
+					</ol>
+				</div>
+
+
+
+				<figure class="wp-block-table">
+					<table>
+						<tbody>
+							<tr>
+								<td>Название</td>
+								<td>Буй казино / Booi Casino</td>
+							</tr>
+							<tr>
+								<td>Актуальное зеркало</td>
+								<td>/booi86a5m.com/ru</td>
+							</tr>
+							<tr>
+								<td>Год создания</td>
+								<td>2019</td>
+							</tr>
+							<tr>
+								<td>Лицензирование</td>
+								<td>Управление игорного бизнеса Кюрасао</td>
+							</tr>
+							<tr>
+								<td>Софт</td>
+								<td>1&#215;2 Gaming, NetEnt, Microgaming, Play&#8217;n GO, Relax Gaming, Evolution Gaming, Pragmatic
+									Play,&nbsp;Yggdrasil Gaming, QuickSpin, Blueprint Gaming, Habanero, Booongo, NextGen, Revolver,
+									Pushgaming, Amatic, ReelPlay, BetSoft, ELK Studios, BTG</td>
+							</tr>
+							<tr>
+								<td>Языки</td>
+								<td>Русский, английский, португальский, польский</td>
+							</tr>
+							<tr>
+								<td>Валюты</td>
+								<td>Доллар США, бразильский реал, канадский и новозеландский доллар, индийский рупии, евро, злотые,
+									рубли</td>
+							</tr>
+							<tr>
+								<td>Мин. депозит</td>
+								<td>$/€10</td>
+							</tr>
+							<tr>
+								<td>Мин. депозит на бонус</td>
+								<td>$/€10</td>
+							</tr>
+							<tr>
+								<td>Платежные методы</td>
+								<td>Neteller, Skrill, Bitcoin, Dash, Litecoin, Dogecoin, Visa, Maestro, MasterCard, Perfect Money, Much
+									Better</td>
+							</tr>
+							<tr>
+								<td>Где разрешено</td>
+								<td>Австрия, Филлипины, Бразилия, Греция, Польша, Португалия, Канада, Чили, Индия, Ирландия, Чехия,
+									Словения, Словакия, Малайзия, Финляндия, Норвегия, рф</td>
+							</tr>
+							<tr>
+								<td>Где запрещено</td>
+								<td>США, Австралия, Израиль, Украина, Швеция, Нидерланды, Испания, Болгария, Румыния, Турция, Италия,
+									Франция, Венгрия, Мальта, Черногория, Кипр, Грузия</td>
+							</tr>
+							<tr>
+								<td>Контакты</td>
+								<td>Live-чат: 24/7<br>E-mail: <a rel="noreferrer noopener" class="rank-math-link" href=""
+										target="_blank"><span class="__cf_email__"
+											data-cfemail="deadabaeaeb1acaa9ebcb1b1b7f0bdb1b3">[email&#160;protected]</span></a></td>
+							</tr>
+						</tbody>
+					</table>
+				</figure>
+
+
+
+				<p>Онлайн казино Буй начало свою работу в 2019 году, быстро приобрело популярность среди гемблеров из СНГ,
+					Европы и России и продолжает получать положительные отзывы. Игровой клуб Booi предлагает своим гостям
+					множество оригинальных акций, увлекательных турниров, круглосуточную службу поддержки и коллекцию в 1600
+					игровых автоматов.</p>
+
+
+
+				<h2 class="wp-block-heading" id="r1">Регистрация в Booi казино и бонусная программа</h2>
+
+
+
+				<p>Создание учетной записи в плей клубе не занимает больше нескольких минут. К ней допускаются лица, которым уже
+					исполнилось 18 лет. Стоит отметить, что резидентам ряда стран запрещено создавать аккаунты на сайте. Полный их
+					список доступен в «Правилах и условиях». Чтобы зарегистрироваться, нужно указать адрес электронной почты,
+					придумать логин и пароль и выбрать игровую валюту из предложенного списка. Вся информация, указанная при
+					создании аккаунта, должна быть достоверной. Затем подтвердите email и номер телефона, а также заполните
+					информацию в профиле.</p>
+
+
+				<div class="wp-block-image">
+					<figure class="aligncenter size-full">
+						<img decoding="async" fetchpriority="high" width="881" height="310" src="img/reggbooi.jpg"
+							data-lazy-type="image" data-src="img/reggbooi.jpg" alt="Буй казино регистрация"
+							class="lazy lazy-hidden wp-image-1261" srcset=""
+							data-srcset="img/reggbooi.jpg 881w, img/reggbooi-300x106.jpg 300w, img/reggbooi-768x270.jpg 768w"
+							sizes="(max-width: 881px) 100vw, 881px" /><noscript><img decoding="async" fetchpriority="high" width="881"
+								height="310" src="img/reggbooi.jpg" alt="Буй казино регистрация" class="wp-image-1261"
+								srcset="img/reggbooi.jpg 881w, img/reggbooi-300x106.jpg 300w, img/reggbooi-768x270.jpg 768w"
+								sizes="(max-width: 881px) 100vw, 881px" /></noscript>
+						<figcaption class="wp-element-caption">Booi казино регистрация</figcaption>
+					</figure>
+				</div>
+
+
+				<h2 class="wp-block-heading" id="r2">Приветственные бонусы</h2>
+
+
+
+				<p>Для клиентов казино Booi разработана щедрая бонусная политика. Каждый новый игрок вознаграждается за
+					регистрацию и первые пополнения счета. Приветственный бонусный пакет включает пять различных предложений,
+					способных в совокупности принести 150% от внесенной на баланс суммы и 100 фриспинов.</p>
+
+
+
+				<h2 class="wp-block-heading" id="r3">Индивидуальные предложения</h2>
+
+
+
+				<p>Для их получения достаточно подтвердить свой email. После входа в раздел «Касса» игрок увидит свои
+					персональные подарки, которые обновляются по понедельникам и пятницам. Ознакомившись со списком предложений,
+					остается только активировать самое интересное из них и выполнить условия вейджера в указанный срок.</p>
+
+
+
+				<figure class="wp-block-image size-full"><img decoding="async" width="986" height="246"
+						src="img/booi-kazino-main.jpg" data-lazy-type="image" data-src="img/booi-kazino-main.jpg" alt="Booi Casino"
+						class="lazy lazy-hidden wp-image-405" srcset=""
+						data-srcset="img/booi-kazino-main.jpg 986w, img/booi-kazino-main-300x75.jpg 300w, img/booi-kazino-main-768x192.jpg 768w, img/booi-kazino-main-24x6.jpg 24w, img/booi-kazino-main-36x9.jpg 36w, img/booi-kazino-main-48x12.jpg 48w"
+						sizes="(max-width: 986px) 100vw, 986px" /><noscript><img decoding="async" width="986" height="246"
+							src="img/booi-kazino-main.jpg" alt="Booi Casino" class="wp-image-405"
+							srcset="img/booi-kazino-main.jpg 986w, img/booi-kazino-main-300x75.jpg 300w, img/booi-kazino-main-768x192.jpg 768w, img/booi-kazino-main-24x6.jpg 24w, img/booi-kazino-main-36x9.jpg 36w, img/booi-kazino-main-48x12.jpg 48w"
+							sizes="(max-width: 986px) 100vw, 986px" /></noscript></figure>
+
+
+
+				<h2 class="wp-block-heading" id="r4">Бонусы за уровень статуса игрока</h2>
+
+
+
+				<p>Азартный интернет ресурс предлагает систему статусов, от которых зависят персональные бонусные предложения
+					игроков. Статусы присваиваются в зависимости от суммы, внесенной на счет за последние 30 дней:</p>
+
+
+
+				<ul>
+					<li>Wooden Lemur &#8212; выдается за пополнение от 250 USD. Статус позволяет получать кэшбэк в 4%;</li>
+
+
+
+					<li>Silver Eagle &#8212; присваивается за депозит от 250 до 999 USD. Обладатели статуса получают кэшбэк в 5%;
+					</li>
+
+
+
+					<li>Golden Alligator &#8212; выдается за пополнение от 1000 до 2499 USD. Статус позволяет принимать участие в
+						уникальных акциях и розыгрышах, а также получать кэшбэк 5%;</li>
+
+
+
+					<li>Platinum Elephant &#8212; присваивается за внесение на счет от 2500 до 4999 USD. Кэшбэк составляет 6%.
+						Становятся доступны специальные турниры;</li>
+
+
+
+					<li>Diamond Lion – наивысший статус, который получают игроки, пополнившие баланс от 5000 USD и выше. Им
+						открывается доступ к уникальным промоакциям. За каждым таким игроком закрепляется персональный менеджер.
+						Кэшбэк возрастает до 7%.</li>
+				</ul>
+
+
+
+				<h2 class="wp-block-heading" id="r5">Бонусы на День Рождения</h2>
+
+
+
+				<figure class="wp-block-image">
+					<img decoding="async" width="572" height="508" src="img/booi-kazino-bonus.jpg" data-lazy-type="image"
+						data-src="img/booi-kazino-bonus.jpg" alt="" class="lazy lazy-hidden wp-image-399" srcset=""
+						data-srcset="img/booi-kazino-bonus.jpg 572w, img/booi-kazino-bonus-300x266.jpg 300w, img/booi-kazino-bonus-24x21.jpg 24w, img/booi-kazino-bonus-36x32.jpg 36w, img/booi-kazino-bonus-48x43.jpg 48w"
+						sizes="(max-width: 572px) 100vw, 572px" />
+					<noscript>
+						<img decoding="async" width="572" height="508" src="img/booi-kazino-bonus.jpg"
+							alt="Бонусы и поощрения ко дню рождения игрока" class="wp-image-399"
+							srcset="img/booi-kazino-bonus.jpg 572w, img/booi-kazino-bonus-300x266.jpg 300w, img/booi-kazino-bonus-24x21.jpg 24w, img/booi-kazino-bonus-36x32.jpg 36w, img/booi-kazino-bonus-48x43.jpg 48w"
+							sizes="(max-width: 572px) 100vw, 572px" />
+					</noscript>
+				</figure>
+
+
+
+				<p class="has-text-align-center"></p>
+
+
+
+				<p>Именинников казино также не оставило без приятных сюрпризов. В день своего рождения загляните в электронный
+					почтовый ящик, указанный во время регистрации. Там уже будет ждать праздничный подарок в виде пакета
+					бесплатных вращений, промокода, денежного вознаграждения или другого презента.</p>
+
+
+
+				<h2 class="wp-block-heading" id="r6">Кэшбэк казино Буй</h2>
+
+
+
+				<p><a href="">Кэшбэк Буи казино</a> – это возврат части проигранных денег. В зависимости от
+					своего статуса гемблеры имеют возможность вернуть от 4 до 7%. Кэшбэк может варьироваться от 20% до 100%. Таким
+					образом, за депозит в размере $/€10 вы сможете получить от $/€2 до полных $/€10 в качестве кешбэк-бонуса.
+					Бонус начисляется по четвергам в 23:59 по UTC, после чего становится доступен в личном кабинете в течение 1
+					недели. Отыгрывать полученную сумму нет необходимости.</p>
+
+
+
+				<h2 class="wp-block-heading" id="r7">Ассортимент игр и программное обеспечение</h2>
+
+
+
+				<p>Сегодня официальный сайт казино Буй предлагает более полутора тысяч игровых автоматов c RTP от 93 до 97%,
+					способных привлечь гемблеров с самыми разнообразными предпочтениями. Практически все игры имеют демо версию,
+					позволяющую играть бесплатно для ознакомления с их правилами и особенностями.</p>
+
+
+
+				<figure class="wp-block-image"><img decoding="async" loading="lazy" width="717" height="516"
+						src="img/booi-kazino-igry.jpg" data-lazy-type="image" data-src="img/booi-kazino-igry.jpg" alt=""
+						class="lazy lazy-hidden wp-image-403" srcset=""
+						data-srcset="img/booi-kazino-igry.jpg 717w, img/booi-kazino-igry-300x216.jpg 300w, img/booi-kazino-igry-24x17.jpg 24w, img/booi-kazino-igry-36x26.jpg 36w, img/booi-kazino-igry-48x35.jpg 48w"
+						sizes="(max-width: 717px) 100vw, 717px" /><noscript><img decoding="async" loading="lazy" width="717"
+							height="516" src="/booi-kazino-igry.jpg" alt="Ассортимент игр казино Буи" class="wp-image-403"
+							srcset="img/booi-kazino-igry.jpg 717w, img/booi-kazino-igry-300x216.jpg 300w, img/booi-kazino-igry-24x17.jpg 24w, img/booi-kazino-igry-36x26.jpg 36w, img/booi-kazino-igry-48x35.jpg 48w"
+							sizes="(max-width: 717px) 100vw, 717px" /></noscript></figure>
+
+
+
+				<p class="has-text-align-center"></p>
+
+
+
+				<p>В Booi Casino все игры разделены по таким категориям:</p>
+
+
+
+				<ul>
+					<li>Слоты – классические и современные автоматы с различным количеством барабанов и способов начисления
+						выплат, большинство из которых имеет призовые функции, встроенные бонусные и прочие выигрышные возможности;
+					</li>
+
+
+
+					<li>Джекпоты – автоматы, в которых разыгрываются джекпоты;</li>
+
+
+
+					<li>Live-игры с реальными дилерами в режиме онлайн;</li>
+
+
+
+					<li>Настольные. Этот раздел посвящен лучшим настольным играм, сюда входят: покер, рулетка, баккара, блэкджек и
+						многие другие;</li>
+
+
+
+					<li>Видео покеры &#8212; несколько десятков популярных разновидностей этого типа азартных игр;</li>
+
+
+
+					<li><a href="">Лотереи</a> &#8212; Кено, Бинго, колесо Фортуны, а также автоматы без барабанов, но с
+						игровыми полями.</li>
+				</ul>
+
+
+
+				<p>Официальный сайт казино Буи предлагает внушительный ассортимент игр от передовых разработчиков:</p>
+
+
+
+				<figure class="wp-block-table">
+					<table>
+						<tbody>
+							<tr>
+								<td>Net Entertainment</td>
+								<td>Gonzo&#8217;s Quest, Jack and the Beanstalk, Sweety Honey Fruity, Spinata Grande, Fruitshop, Twin
+									Spin MegaWays, Divine Fortune, Reel Rush, Dazzle Me Megaways, Starburst.</td>
+							</tr>
+							<tr>
+								<td>Microgaming</td>
+								<td>Immortal Romance, Fortunium, Enchanting Spells, 300 Shields, Dreams of Fortune, Mega Money Rush, Hot
+									as Hades, Noble Sky, Lucky Little Gods,&nbsp;Jungle Jim.</td>
+							</tr>
+							<tr>
+								<td>Endorphina</td>
+								<td>Geisha, Fresh Fruits, Crystal Skull, Reno 7’s,&nbsp;Spinions Game Day, Satoshi&#8217;s Secret,
+									Voodoo, Book of Santa, Santa&#8217;s Gift, Blast! Boom! Bang!</td>
+							</tr>
+							<tr>
+								<td>Quickspin</td>
+								<td>Sakura Fortune, Reno 7’s, Wild Luchador, Book of Duat,&nbsp;Big Bad Wolf, Blue Wizard, Cabin
+									Crashers,&nbsp;Sticky Bandits, Cash Truck, Wild Return.</td>
+							</tr>
+							<tr>
+								<td>Thunderkick</td>
+								<td>Esqueleto Explosivo, Midas Golden Touch, Big Fin Bay, Babushkas, Zoom,&nbsp;Pink Elephants, Frog
+									Grog, Gods of Rock, Luchadora, Barber Shop Uncut.</td>
+							</tr>
+							<tr>
+								<td>Yggdrasil</td>
+								<td>The One Armed Bandit, Niagara Falls, Hyperburst, Moley Moolah, Baron Samedi, Lightning Joker,
+									Hypernova 10K Ways, All Star Knockout, 9K Yeti, Wolf Hunters.</td>
+							</tr>
+							<tr>
+								<td>Booongo</td>
+								<td>Book of Sun, Sky Gems 5 Wilds, Eye of Gold, Tiger Stone, 88 Dragon, Scarab Temple, Sun of Egypt,
+									Thunder of Olympus, 88 Wild Dragon, 777 gems.</td>
+							</tr>
+							<tr>
+								<td>ELK Studios</td>
+								<td>Respin Circus, Electric Sam, Taco Brothers Saving Christmas, Joker Gems, Dj Wild, Hit It Hard,
+									Cluster Slide, Poltava, Dream Diver, Vegas Diamonds.</td>
+							</tr>
+							<tr>
+								<td>Habanero</td>
+								<td>Mount Mazuma, Arctic Wonders, 5 Lucky Lions, Jump, Barnstormer Bucks, Arcane Elements, 5 Mariachis,
+									Nuwa, All For One, Hot Hot Fruit.</td>
+							</tr>
+							<tr>
+								<td>Pushgaming</td>
+								<td>Wizard Shop, Blaze of RA, Razor Shark, Fat Drac, Gems of Gods, The Shadow Order, Fat Santa, Jammin’
+									Jars, Mystery Museum, Wild Swarm.</td>
+							</tr>
+							<tr>
+								<td>Blueprint Gaming</td>
+								<td>Wolf Legend Megaways, Lion Thunder, King Kong Cash, Jewel Twist, Lightning Strike, Temple of
+									Treasure Megaways, Diamond Mine, Sausage Party, Ted, Valletta Megaways.</td>
+							</tr>
+							<tr>
+								<td>Play&#8217;n Go</td>
+								<td>Banana Rock, Reactoonz, Tower Quest, Saxon, Dragon Maiden, Moon Princess, Casino Holdem, Sizzling
+									Spins, Gunslinger Reloaded, Cash Vandal.</td>
+							</tr>
+							<tr>
+								<td>Amatic</td>
+								<td>Princess of Pearls, Book of Aztec, Harlequeen, Super Cats, Buffalo Thunderstacks, Hot Soccer, Lucky
+									Double, Book of Queen, Lovely Lady, Fiery Fruits.</td>
+							</tr>
+							<tr>
+								<td>Betsoft</td>
+								<td>Chilly Pop, Legend of the Nile, Super Sweets, Tiger Claw, The Hive, Carnaval Forever, Fruit Zen,
+									Total Overdrive Slice, Take The Bank, Gold Canyon.</td>
+							</tr>
+							<tr>
+								<td>Relax Gaming</td>
+								<td>The Great Pigsby, Dragons Awakening, Cluster Tumble, Banana Town, Temple Tumble Megaways, Ignite the
+									Night, Money Train, Roulette Nouveau, Net Gains, Caveman Bob.</td>
+							</tr>
+						</tbody>
+					</table>
+				</figure>
+
+
+
+				<h2 class="wp-block-heading" id="r8">Турниры</h2>
+
+
+
+				<p>Каждую неделю Сайт Booi Casino дает возможность всем зарегистрированным игрокам стать участниками турниров.
+					Их призовой фонд порой достигает десятков тысяч долларов. Игровой клуб Буи предлагает побороться за ценные
+					призы. После завершения состязания призовой фонд делится между участниками, занявшими верхние места в
+					турнирной таблице.</p>
+
+
+
+				<figure class="wp-block-image"><img decoding="async" loading="lazy" width="724" height="314"
+						src="img/booi-kazino-new-turnir.jpg" data-lazy-type="image" data-src="img/booi-kazino-new-turnir.jpg" alt=""
+						class="lazy lazy-hidden wp-image-407" srcset=""
+						data-srcset="img/booi-kazino-new-turnir.jpg 724w, img/booi-kazino-new-turnir-300x130.jpg 300w, img/booi-kazino-new-turnir-24x10.jpg 24w, img/booi-kazino-new-turnir-36x16.jpg 36w, img/booi-kazino-new-turnir-48x21.jpg 48w"
+						sizes="(max-width: 724px) 100vw, 724px" /><noscript><img decoding="async" loading="lazy" width="724"
+							height="314" src="/booi-kazino-new-turnir.jpg" alt="Турниры в казино" class="wp-image-407"
+							srcset="img/booi-kazino-new-turnir.jpg 724w, img/booi-kazino-new-turnir-300x130.jpg 300w, img/booi-kazino-new-turnir-24x10.jpg 24w, img/booi-kazino-new-turnir-36x16.jpg 36w, img/booi-kazino-new-turnir-48x21.jpg 48w"
+							sizes="(max-width: 724px) 100vw, 724px" /></noscript></figure>
+
+
+
+				<p class="has-text-align-center"></p>
+
+
+
+				<p><a href="/turniry-kazino/">Турниры в казино Буи</a> бывают двух типов:</p>
+
+
+
+				<ul>
+					<li>По выигрышным сериям – выигрывают участники, набравшие в серии самое большое количество призовых
+						последовательностей;</li>
+
+
+
+					<li>По баллам – побеждают те, кто набрал больше очков, играя в слотах.</li>
+				</ul>
+
+
+
+				<p>Список соревнований регулярно обновляется. Отслеживать даты и время их проведения возможно в соответствующем
+					разделе.</p>
+
+
+
+				<h2 class="wp-block-heading" id="r9">Ввод и вывод средств</h2>
+
+
+
+				<p>Платежи в Booi Casino принимаются в рублях, гривнах, евро и долларах с банковских карт и популярных платежных
+					систем:</p>
+
+
+
+				<ul>
+					<li>Qiwi;</li>
+
+
+
+					<li>Webmoney;</li>
+
+
+
+					<li>YandexMoney;</li>
+
+
+
+					<li>Skrill, Neteller;</li>
+
+
+
+					<li>EcoPays;</li>
+
+
+
+					<li>Мобильный платеж;</li>
+
+
+
+					<li>PayAnyWay;</li>
+
+
+
+					<li>Perfect Money;</li>
+
+
+
+					<li>Sofort.</li>
+				</ul>
+
+
+
+				<p>Для вывода доступна сумма от 20 до 7500 USD, а пополнить счет есть возможность на сумму от 5 USD и выше. Срок
+					зачисления средств на карту или электронный кошелек зависит от того, какая платежная система была выбрана в
+					процессе регистрации. Через банковские карты и Qiwi деньги переводятся моментально, а посредством остальных
+					платежных систем – до 8 часов.</p>
+
+
+
+				<figure class="wp-block-image">
+					<img decoding="async" loading="lazy" width="1024" height="542"
+						src="img/booi-official-vyvod-sr-min-1024x542.jpg" data-lazy-type="image"
+						data-src="img/booi-official-vyvod-sr-min-1024x542.jpg" alt="" class="lazy lazy-hidden wp-image-537"
+						srcset=""
+						data-srcset="img/booi-official-vyvod-sr-min-1024x542.jpg 1024w, img/booi-official-vyvod-sr-min-300x159.jpg 300w, img/booi-official-vyvod-sr-min-768x406.jpg 768w, img/booi-official-vyvod-sr-min-24x13.jpg 24w, img/booi-official-vyvod-sr-min-36x19.jpg 36w, img/booi-official-vyvod-sr-min-48x25.jpg 48w, img/booi-official-vyvod-sr-min.jpg 1259w"
+						sizes="(max-width: 1024px) 100vw, 1024px" />
+					<noscript>
+						<img decoding="async" loading="lazy" width="1024" height="542"
+							src="img/booi-official-vyvod-sr-min-1024x542.jpg" alt="" class="wp-image-537"
+							srcset="img/booi-official-vyvod-sr-min-1024x542.jpg 1024w, img/booi-official-vyvod-sr-min-300x159.jpg 300w, img/booi-official-vyvod-sr-min-768x406.jpg 768w, img/booi-official-vyvod-sr-min-24x13.jpg 24w, img/booi-official-vyvod-sr-min-36x19.jpg 36w, img/booi-official-vyvod-sr-min-48x25.jpg 48w, img/booi-official-vyvod-sr-min.jpg 1259w"
+							sizes="(max-width: 1024px) 100vw, 1024px" />
+					</noscript>
+				</figure>
+
+
+
+				<p class="has-text-align-center"></p>
+
+
+
+				<p>Выплаты выигрышей осуществляются круглосуточно. Заявки на вывод обрабатываются в течение 12 часов с момента
+					их подачи. Для вывода суммы от 1000 USD необходимо пройти процедуру верификации, которая обычно не занимает
+					более двух суток. Лимиты на вывод в сутки варьируются в зависимости от статуса игрока. Для статусов Wooden
+					Lemur, Silver Eagle и Golden Alligator – 3000 долларов, для Platinum Elephant – 5000 долларов, для Diamond
+					Lion – 7500 долларов. Вносить деньги на счет и делать реальные ставки разрешено только лицам, достигшим
+					совершеннолетия. Аккаунты, не соответствующие данному критерию, блокируются.</p>
+
+
+
+				<h2 class="wp-block-heading" id="r10">Мобильная версия Booi Casino</h2>
+
+
+
+				<p>Вы можете играть в онлайн слоты Буй казино на своем мобильном телефоне. Веб-сайт игрового клуба полностью
+					оптимизирован для игры на мобильных и планшетных устройствах. Вы также можете осуществлять все возможные
+					финансовые транзакции напрямую с мобильного телефона. На данный момент не существует приложения Booi казино
+					для Android или iOS. Однако вполне возможно его появления в самое ближайшее время.</p>
+
+
+
+				<h2 class="wp-block-heading" id="r11">Техподдержка Буй казино</h2>
+
+
+
+				<p>Операторы службы поддержки Буи казино проконсультируют игроков по любым вопросам, связанным с открытием
+					счета, платежами, отыгрышем бонусов или поиском альтернативных зеркал. Сотрудники службы поддержки
+					разговаривают на русском и английском языках и работают в круглосуточном режиме. Для обращения возможно
+					использовать встроенный онлайн чат или email.</p>
+
+
+
+				<h2 class="wp-block-heading" id="r12">FAQ</h2>
+
+
+
+				<h3 class="wp-block-heading">Какие самые популярные аппараты в казино?</h3>
+
+
+
+				<p>Слоты, которые пользуются у игроков наибольшей популярностью, обычно отображаются на главной странице. В Booi
+					казино автоматы сортируются по названию, производителю, а также по дополнительным фильтрам поиска.</p>
+
+
+
+				<h3 class="wp-block-heading">Как получить большой выигрыш?</h3>
+
+
+
+				<p>Тем, кто хочет выигрывать по-крупному, стоит внимательно следить за акциями и турнирами казино. Их участники
+					имеют отличную возможность стать обладателем ценных призов. Не стоит забывать и о кэшбэке, чаще делайте
+					реальные ставки тем самым увеличивая сумму еженедельного возврата.</p>
+
+
+
+				<h3 class="wp-block-heading">Что делать, если не работает официальный сайт?</h3>
+
+
+
+				<p>Достаточно лишь найти <a href="">рабочее зеркало официального сайта booi casino</a> и
+					авторизоваться на нем, используя уже существующие логин и пароль. Обратите внимание: создавать более одной
+					учетной записи запрещено, дублированные аккаунты блокируются администрацией.</p>
+
+
+
+				<h3 class="wp-block-heading">Как пройти верификацию?</h3>
+
+
+
+				<p>На вкладке «Верификация» следует загрузить скан-копию документа, подтверждающего личность, в формате PNG,
+					GIF, JPG или PDF. Фото должно быть без размытий, с четко видными цифрами и буквами на всем документе.</p>
+
+
+
+				<h3 class="wp-block-heading">Как играть в Booi на Android и iOS?</h3>
+
+
+
+				<p>Мобильная версия Буи позволяет играть на деньги или бесплатно в слоты со смартфонов и планшетов в режиме
+					онлайн без зависаний и прочих неудобств. Для этого понадобится лишь соединение с интернетом. Еще один вариант
+					– это мобильное приложение, которое доступно для установки на устройства на базе Android.</p>
+
+				<a href="" class="button_pure">Пройти регистрацию</a>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container footer__container">
+				<div class="footer__wrapper">
+					<aside class="footer__aside">
+						<nav class="footer-navigation">
+							<span class="footer-navigation__title">Важно знать:</span>
+							<div class="menu-footer-container">
+								<ul id="footer-menu" class="menu">
+									<li id="menu-item-817"
+										class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-817">
+										<a href="" aria-current="page">О Нас</a>
+									</li>
+									<li id="menu-item-897" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-897">
+										<a href="">Мобильная
+											версия</a>
+									</li>
+									<li id="menu-item-901" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-901">
+										<a href="">Вывод денег</a>
+									</li>
+									<li id="menu-item-839" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-839">
+										<a href="">Промокоды</a>
+									</li>
+									<li id="menu-item-837" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-837">
+										<a href="">Поинты</a>
+									</li>
+									<li id="menu-item-823" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-823">
+										<a href="">Бездепозитные бонусы</a>
+									</li>
+									<li id="menu-item-821" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-821">
+										<a href="">Фриспины</a>
+									</li>
+									<li id="menu-item-835" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-835">
+										<a href="">Подарки
+											на день рождения</a>
+									</li>
+									<li id="menu-item-833" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-833">
+										<a href="">Техподдержка</a>
+									</li>
+									<li id="menu-item-827" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-827">
+										<a href="">Лотереи</a>
+									</li>
+									<li id="menu-item-825" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-825">
+										<a href="">Верификация</a>
+									</li>
+									<li id="menu-item-841" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-841">
+										<a href="">Ответственная игра</a>
+									</li>
+									<li id="menu-item-831" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-831">
+										<a href="">Правила и условия</a>
+									</li>
+									<li id="menu-item-819" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-819">
+										<a href="">Турниры</a>
+									</li>
+									<li id="menu-item-829" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-829">
+										<a href="">Отзывы</a>
+									</li>
+									<li id="menu-item-843" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-843">
+										<a href="">FAQ</a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+					</aside>
+					<div class="footer__main">
+						<div class="payments">
+							<div class="payments__item">
+								<div class="payments__item-wrapper">
+									<span title="visa / mastercard" class="payments_icon payments_icon-visa "></span>
+								</div>
+								<span class="payments__title">visa / mastercard</span>
+							</div>
+							<div class="payments__item">
+								<div class="payments__item-wrapper">
+									<span title="maestro" class="payments_icon payments_icon-maestro "></span>
+								</div>
+								<span class="payments__title">maestro</span>
+							</div>
+							<div class="payments__item">
+								<div class="payments__item-wrapper">
+									<span title="qiwi" class="payments_icon payments_icon-qiwi "></span>
+								</div>
+								<span class="payments__title">qiwi</span>
+							</div>
+							<div class="payments__item">
+								<div class="payments__item-wrapper">
+									<span title="webmoney" class="payments_icon payments_icon-webmoney "></span>
+								</div>
+								<span class="payments__title">webmoney</span>
+							</div>
+							<div class="payments__item">
+								<div class="payments__item-wrapper">
+									<span title="yandex money" class="payments_icon payments_icon-yandex "></span>
+								</div>
+								<span class="payments__title">yandex money</span>
+							</div>
+							<div class="payments__item">
+								<div class="payments__item-wrapper">
+									<span title="skrill" class="payments_icon payments_icon-skrill "></span>
+								</div>
+								<span class="payments__title">skrill</span>
+							</div>
+							<div class="payments__item">
+								<div class="payments__item-wrapper">
+									<span title="neteller" class="payments_icon payments_icon-neteller "></span>
+								</div>
+								<span class="payments__title">neteller</span>
+							</div>
+							<div class="payments__item">
+								<div class="payments__item-wrapper">
+									<span title="Interac e-Transfer" class="payments_icon payments_icon-interac-etransfer "></span>
+								</div>
+								<span class="payments__title">Interac e-Transfer</span>
+							</div>
+							<div class="payments__item">
+								<div class="payments__item-wrapper">
+									<span title="Interac Online" class="payments_icon payments_icon-interac-online "></span>
+								</div>
+								<span class="payments__title">Interac Online</span>
+							</div>
+							<div class="payments__item">
+								<div class="payments__item-wrapper">
+									<span title="Express-Connect" class="payments_icon payments_icon-express-connect "></span>
+								</div>
+								<span class="payments__title">Express-Connect</span>
+							</div>
+						</div>
+						<div class="partners">
+							<div class="partners__item">
+								<span title="1x2Gaming" class="partners_icon partners_icon-1x2Gaming "></span>
+							</div>
+							<div class="partners__item">
+								<span title="2by2Gaming" class="partners_icon partners_icon-2by2Gaming "></span>
+							</div>
+							<div class="partners__item">
+								<span title="ainsworth" class="partners_icon partners_icon-ainsworth "></span>
+							</div>
+							<div class="partners__item">
+								<span title="amatic" class="partners_icon partners_icon-amatic "></span>
+							</div>
+							<div class="partners__item">
+								<span title="belatra" class="partners_icon partners_icon-belatra "></span>
+							</div>
+							<div class="partners__item">
+								<span title="betsoft" class="partners_icon partners_icon-betsoft "></span>
+							</div>
+							<div class="partners__item">
+								<span title="bfgames" class="partners_icon partners_icon-bfgames "></span>
+							</div>
+							<div class="partners__item">
+								<span title="bigtimegaming" class="partners_icon partners_icon-bigtimegaming "></span>
+							</div>
+							<div class="partners__item">
+								<span title="blueprint" class="partners_icon partners_icon-blueprint "></span>
+							</div>
+							<div class="partners__item">
+								<span title="booming-games" class="partners_icon partners_icon-booming-games "></span>
+							</div>
+							<div class="partners__item">
+								<span title="booongo" class="partners_icon partners_icon-booongo "></span>
+							</div>
+							<div class="partners__item">
+								<span title="elk" class="partners_icon partners_icon-elk "></span>
+							</div>
+							<div class="partners__item">
+								<span title="endorphina" class="partners_icon partners_icon-endorphina "></span>
+							</div>
+							<div class="partners__item">
+								<span title="evolutiongaming" class="partners_icon partners_icon-evolutiongaming "></span>
+							</div>
+							<div class="partners__item">
+								<span title="ganapati" class="partners_icon partners_icon-ganapati "></span>
+							</div>
+							<div class="partners__item">
+								<span title="genesis" class="partners_icon partners_icon-genesis "></span>
+							</div>
+							<div class="partners__item">
+								<span title="habanero" class="partners_icon partners_icon-habanero "></span>
+							</div>
+							<div class="partners__item">
+								<span title="irondog" class="partners_icon partners_icon-irondog "></span>
+							</div>
+							<div class="partners__item">
+								<span title="justforwin" class="partners_icon partners_icon-justforwin "></span>
+							</div>
+							<div class="partners__item">
+								<span title="netent" class="partners_icon partners_icon-netent "></span>
+							</div>
+							<div class="partners__item">
+								<span title="nolimitcity" class="partners_icon partners_icon-nolimitcity "></span>
+							</div>
+							<div class="partners__item">
+								<span title="playngo" class="partners_icon partners_icon-playngo "></span>
+							</div>
+							<div class="partners__item">
+								<span title="playson" class="partners_icon partners_icon-playson "></span>
+							</div>
+							<div class="partners__item">
+								<span title="pragmatic" class="partners_icon partners_icon-pragmatic "></span>
+							</div>
+							<div class="partners__item">
+								<span title="pushgaming" class="partners_icon partners_icon-pushgaming "></span>
+							</div>
+							<div class="partners__item">
+								<span title="quickfire" class="partners_icon partners_icon-quickfire "></span>
+							</div>
+							<div class="partners__item">
+								<span title="quickspin" class="partners_icon partners_icon-quickspin "></span>
+							</div>
+							<div class="partners__item">
+								<span title="rabcat" class="partners_icon partners_icon-rabcat "></span>
+							</div>
+							<div class="partners__item">
+								<span title="redtiger" class="partners_icon partners_icon-redtiger "></span>
+							</div>
+							<div class="partners__item">
+								<span title="relax" class="partners_icon partners_icon-relax "></span>
+							</div>
+							<div class="partners__item">
+								<span title="spinomenal" class="partners_icon partners_icon-spinomenal "></span>
+							</div>
+							<div class="partners__item">
+								<span title="thunderkick" class="partners_icon partners_icon-thunderkick "></span>
+							</div>
+							<div class="partners__item">
+								<span title="tomhorn" class="partners_icon partners_icon-tomhorn "></span>
+							</div>
+							<div class="partners__item">
+								<span title="wazdan" class="partners_icon partners_icon-wazdan "></span>
+							</div>
+							<div class="partners__item">
+								<span title="yggdrasil" class="partners_icon partners_icon-yggdrasil "></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<span class="copyright">
+					BOOI is operated by NETGLOBE SERVICES LTD acting as a payment processor, a company with a registered address
+					at 79 Spyrou Kyprianou Avenue, Protopapas Building, 2nd floor, office 201, 3076 Limassol, Cyprus.
+					<br>Registration number HE 313864 <br> GLOBONET B.V., a company with registered address at Kaya Richard J.
+					Beaujon Z / N, Curaçao, is licensed by the Government of Curacao under the No.1668 / JAZ. <br>&copy; Netglobe
+					Services Limited, 2019 - 2021. All rights reserved.
+				</span>
+			</div>
+		</footer>
+</body>
+
+</html>
